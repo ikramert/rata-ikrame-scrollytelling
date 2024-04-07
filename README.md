@@ -2,7 +2,8 @@
 
 ## Projet scolaire dans le cadre du cours:
 
-Le projet a été réalisé dans le cadre du cours d'Optimisation Web - Projet Scrollytelling. [Instructions du projet]([lien_vers_les_instructions](https://tim-montmorency.com/timdoc/582-424MO/projet-scrollytelling/)).
+Le projet a été réalisé dans le cadre du cours d'Optimisation Web - Projet Scrollytelling.
+[Instructions du projet]([lien_vers_les_instructions](https://tim-montmorency.com/timdoc/582-424MO/projet-scrollytelling/)).
 
 ## Conception
 

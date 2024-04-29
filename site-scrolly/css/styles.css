@@ -12,7 +12,7 @@
 header {
   width: 100%;
   height: 100vh;
-  background-image: url("../img/img_arriere_plan/arriere_plan.jpg");
+  background-image: url("../img/img_arriere_plan/page-principale.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -49,28 +49,42 @@ header h1 {
   color: white;
 }
 
+/* Styles pour les sections avec images d'arrière-plan */
+#plongee,
+#exploration,
+#traversee,
+#rencontre,
+#decouverte-tresor,
+#confrontation {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 #plongee {
-  background-image: url("../img/img_arriere_plan/scene1_sous-marin.png"); /* Remplacez par le chemin de votre image */
+  background-image: url("../img/img_arriere_plan/arriere-plan-chp1.png"); /* Remplacez par le chemin de votre image */
 }
 
 #exploration {
-  background-image: url("../img/img_arriere_plan/scene2-abysse-sousmarin.png");
+  background-image: url("../img/img_arriere_plan/arriere-plan-chp2.png");
 }
 
 #traversee {
-  background-image: url("../img/img_arriere_plan/scene3_pieuvre.png");
+  background-image: url("../img/img_arriere_plan/arriere-plan-chp3.png");
 }
 
 #rencontre {
-  background-image: url("../img/img_arriere_plan/scene4_sousmarin_poisson.png");
+  background-image: url("../img/img_arriere_plan/arriere-plan-chp4.png");
 }
 
 #decouverte-tresor {
-  background-image: url("../img/img_arriere_plan/scene5_plan1_tresor.png");
+  background-image: url("../img/img_arriere_plan/arriere-plan-chp5.png");
 }
 
 #confrontation {
-  background-image: url("../img/img_arriere_plan/scene6_plan1_tresor.png");
+  background-image: url("../img/img_arriere_plan/arriere-plan-chp6.png");
 }
 
 body {
@@ -145,3 +159,5 @@ footer {
   font-size: 17px;
   text-decoration: underline;
 }
+
+/*Section elements animables */

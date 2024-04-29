@@ -7,15 +7,6 @@ gsap.to("#defilezbtn img", {
   yoyo: true,
 });
 
-// Animation du titre
-gsap.to(".titreHistoire", {
-  x: 20,
-  duration: 2,
-  ease: "sine.inOut",
-  repeat: -1,
-  yoyo: true,
-});
-
 // Animation spritesheet test
 let minuteur;
 

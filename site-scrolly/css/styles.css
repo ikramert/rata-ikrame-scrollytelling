@@ -9,6 +9,7 @@
   --bleu-fonce: #00204a;
 }
 
+/*--------------------------------------------- HEADER -------------------------------------------------------*/
 header {
   width: 100%;
   height: 100vh;
@@ -19,7 +20,7 @@ header {
 }
 
 header h1 {
-  position: absolute;
+  position: relative;
   top: 20px;
   padding: 0 20px;
   text-align: center;
@@ -34,6 +35,19 @@ header h1 {
   }
 }
 
+.titre {
+  font-size: 40px;
+  color: #00506b;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  width: 100%;
+  position: absolute;
+  top: 20;
+  left: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
 #defilezbtn {
   position: absolute;
   bottom: 20px;
@@ -45,32 +59,96 @@ header h1 {
 
 #defilezbtn span {
   margin-left: 5px;
-  font-size: 14px;
+  font-size: 30px;
   color: white;
 }
 
 /*--------------------------------------------- Section pour chapitres -------------------------------------------------------*/
 /*--------------------------------------------- Chapitre 1 ------------------------------------*/
 #plongee {
+  position: relative;
   background-image: url("../img/img_arriere_plan/chapitre_1/arriere-plan-chp1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 /*--------------------------------------------- Chapitre 2 ------------------------------------*/
 #exploration {
   background-image: url("../img/img_arriere_plan/chapitre_2/arriere-plan-chp2.png");
 }
+.jumellesimg {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /*--------------------------------------------- Chapitre 3 ------------------------------------*/
 #traversee {
   background-image: url("../img/img_arriere_plan/chapitre_3/arriere-plan-chp3.png");
+}
+
+.sousmarin {
+  position: relative;
+  bottom: 20vh;
+  left: 40vw;
+  width: 15vw;
+  aspect-ratio: 1/1;
+  background-image: url("../img/img_elements_visuels/sous_marin2.png");
+  animation: playSprite 2s steps(48) infinite;
+  border: 2px solid red;
+  margin: 0 auto;
+  opacity: 0.5;
+}
+
+body.is-scrolling .sousmarin {
+  animation-play-state: running;
+}
+
+@keyframes playSprite {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -4800%;
+  }
 }
 /*--------------------------------------------- Chapitre 4 ------------------------------------*/
 #rencontre {
   background-image: url("../img/img_arriere_plan/chapitre_4/arriere-plan-chp4.png");
 }
+
+svg {
+  width: 50vw;
+  height: auto;
+  max-width: 300px;
+  display: block;
+  margin: auto;
+}
+
 /*--------------------------------------------- Chapitre 5 ------------------------------------*/
 #decouverte-tresor {
   background-image: url("../img/img_arriere_plan/chapitre_5/arriere-plan-chp5.png");
 }
+
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax {
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.content-section {
+  background: rgba(255, 255, 255, 0.9);
+}
+
 /*--------------------------------------------- Chapitre 6 ------------------------------------*/
 #confrontation {
   background-image: url("../img/img_arriere_plan/chapitre_6/arriere-plan-chp6.png");
@@ -79,14 +157,9 @@ header h1 {
 /*--------------------------------------------- SECTION FIN-------------------------------------------------------*/
 /*--------------------------------------------- SECTION FIN -------------------------------------------------------*/
 body {
-  height: 10000px;
+  width: 100vw;
   overflow-x: hidden;
   font-family: "Chelsea Market";
-}
-
-/* Test spriteSheet */
-body.is-scrolling #sprite-container {
-  animation-play-state: running;
 }
 
 main {
@@ -95,13 +168,14 @@ main {
   width: 100vw;
 }
 
-main section {
+section {
   overflow-y: scroll;
   width: 100vw;
   height: 100vh;
   background-size: cover;
   background-position: center;
   border: 1px solid red;
+  position: relative;
 }
 
 #sprite-container {
@@ -125,7 +199,7 @@ main section {
 }
 
 .titreHistoire {
-  position: absolute;
+  position: relative;
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
@@ -134,8 +208,10 @@ main section {
   text-align: center;
 }
 
+/*--------------------------------------------- FOOTER -------------------------------------------------------*/
+
 footer {
-  position: absolute;
+  position: relative;
   background-color: var(--bleu-marin);
   font-weight: bold;
   bottom: 90px;

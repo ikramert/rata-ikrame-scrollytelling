@@ -71,6 +71,8 @@ h4 {
 }
 
 @media screen and (max-width: 768px) {
+  h2,
+  h3,
   h4 {
     font-size: 1rem;
     padding: 8px;
@@ -79,7 +81,7 @@ h4 {
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 6vw;
+    font-size: 3vw;
   }
 }
 
@@ -131,8 +133,8 @@ h4 {
 }
 .jumellesimg {
   position: absolute;
-  top: 60%;
-  left: 50%;
+  top: 80vh;
+  left: 50vw;
   transform: translate(-50%, -50%);
 }
 
@@ -161,28 +163,14 @@ h4 {
   position: absolute;
 }
 
-.sousmarin {
-  position: relative;
-  bottom: 20vh;
-  left: 40vw;
-  width: 15vw;
-  aspect-ratio: 1/1;
-  background-image: url("../img/img_elements_visuels/sous_marin2.png");
-  animation: playSprite 2s steps(48) infinite;
-  border: 2px solid red;
-  margin: 0 auto;
-  opacity: 0.5;
-  z-index: 4;
-}
-
-.sprite {
+.spritemarin {
   width: 100px;
   height: 100px;
-  background-image: url("../img/spritesheets/spritesheet_sous_marin2.png");
+  background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
   background-repeat: no-repeat;
 }
 
-body.is-scrolling .sousmarin {
+body.is-scrolling .spritemarin {
   animation-play-state: running;
 }
 
@@ -210,6 +198,38 @@ body.is-scrolling .sousmarin {
   background-image: url("../img/img_arriere_plan/chapitre_5/arriere-plan-chp5.png");
 }
 
+.tresorimg {
+  position: absolute;
+  right: 37vw;
+  bottom: 2.5vh;
+}
+
+.sous-marin {
+  position: absolute;
+  bottom: 20vh;
+  left: 8vw;
+  width: 30vw;
+  aspect-ratio: 1/1;
+  background-size: 100% 4800%;
+  background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
+  animation: Sousmarin 2s steps(48) infinite;
+  border: 2px solid red;
+  margin: 0 auto;
+}
+
+body.is-scrolling .sprite1 {
+  animation-play-state: running;
+}
+
+@keyframes Sousmarin {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -4800%;
+  }
+}
+
 /*.parallax-container {
   position: relative;
   overflow: hidden;
@@ -231,6 +251,34 @@ body.is-scrolling .sousmarin {
 #confrontation {
   background-image: url("../img/img_arriere_plan/chapitre_6/arriere-plan-chp6.png");
 }
+
+.tentacules {
+  position: absolute;
+  bottom: 20vh;
+  right: 35vw;
+  width: 30vw;
+  aspect-ratio: 1/1;
+  background-size: 4800% 100%;
+  background-image: url("../img/spritesheets/spritesheet_tentacules.png");
+  animation: playSprite 2s steps(48) infinite;
+  border: 2px solid red;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+body.is-scrolling .sprite2 {
+  animation-play-state: running;
+}
+
+@keyframes playSprite {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -4800% 0; /* Déplace horizontalement le fond pour montrer chaque frame */
+  }
+}
+
 /*--------------------------------------------- SECTION FIN -------------------------------------------------------*/
 /*--------------------------------------------- SECTION FIN-------------------------------------------------------*/
 /*--------------------------------------------- SECTION FIN -------------------------------------------------------*/
@@ -288,5 +336,3 @@ footer {
   border-radius: 1rem;
   background-color: rgb(213, 82, 160, 0.8);
 }
-
-/*Section elements animables */

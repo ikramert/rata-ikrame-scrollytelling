@@ -1,57 +1,94 @@
-// Animation de mon scroll-down bouton
-gsap.to("#defilezbtn img", {
-  y: 10, // Décalage vers le bas de 10 pixels
+// GSAP - Importation du plugin ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Animation du bouton pour inciter au défilement vers le bas
+gsap.to("#defilezbtn img, span", {
+  y: 10,
   duration: 0.5,
   ease: "power1.inOut",
   repeat: -1,
   yoyo: true,
 });
 
-// Animation spritesheet test
+// Gestion du défilement et ajout/suppression d'une classe
 let minuteur;
-
-// Fonction pour gérer l'événement de défilement
 function defilement() {
   document.body.classList.add("is-scrolling");
-
-  // Réinitialisation
   clearTimeout(minuteur);
-
-  //Nouveau minuteur
   minuteur = setTimeout(function () {
     document.body.classList.remove("is-scrolling");
     console.log("Le délai de 100ms est écoulé.");
-  }, 100); // Délai de 100ms
+  }, 100);
 }
-
-//écouteur d'événement
 window.addEventListener("scroll", defilement);
 
-// Chapitre 1 svg anim
+// Animations GSAP pour les chapitres avec mouvements horizontaux
+gsap.to(".groupe1", {
+  repeat: -1,
+  ease: "none",
+  duration: 7.5,
+  x: "-120vw", // Déplacement horizontal sur 120% de la largeur de la fenêtre
+});
+
+gsap.to(".groupe2", {
+  repeat: -1,
+  ease: "none",
+  duration: 12,
+  x: "-100vw",
+});
+
+// Animations pour les méduses avec ScrollTrigger
+gsap.to(".medusebleuimg", {
+  scrollTrigger: {
+    markers: true,
+    trigger: ".medusebleuimg",
+    scrub: 1,
+    start: "center 75%",
+    end: "85% 20%",
+  },
+  y: 100,
+  duration: 1,
+});
+
+gsap.to(".meduseroseimg", {
+  scrollTrigger: {
+    markers: true,
+    trigger: ".meduseroseimg",
+    scrub: 1,
+    start: "center 75%",
+    end: "75% 10%",
+  },
+  y: 100,
+  duration: 1,
+});
+
+// Animation pour le sous-marin bleu
+gsap.fromTo(
+  ".sousmarinbleu",
+  { x: "-100%" },
+  {
+    x: "350%",
+    duration: 10,
+    repeat: -1,
+    ease: "none",
+  }
+);
+
 gsap.registerPlugin(ScrollTrigger);
 
-// Timeline d'animation pour CHAPITRE 1
-const timeline1 = gsap
-  .timeline({ repeat: -1, yoyo: true })
-  .to(".dauphinimg", {
-    y: "10vh",
-    x: "50vw",
-    duration: 10,
-    ease: "power1.inOut",
-  })
-  .fromTo(
-    ".poissonrouge",
-    { x: "100%", y: "20vh" },
-    { x: "-100%", y: "20vh", duration: 10, ease: "none" },
-    "<"
-  )
-  // Animation pour CHAPITRE 2
-  .fromTo(
-    ".poissoncoloreimg",
-    { x: "100%", y: "0%" },
-    { x: "-100%", y: "0%", duration: 10, ease: "none" },
-    "<"
-  )
-  .to(".poissoncoloreimg", { y: "50%", duration: 5, ease: "power1.inOut" }, "<")
-  .to(".poissoncoloreimg", { y: "0%", duration: 5, ease: "power1.inOut" })
-  .to(".poissoncoloreimg", { opacity: 1, duration: 2 }, "<");
+// Sprite sous marine
+gsap.to(".sprite", {
+  backgroundPosition: "-900px 0px",
+  ease: "steps(9)",
+  duration: 1,
+  repeat: -1,
+});
+
+//Monstre chapitre 5
+gsap.to(".monstreimg", {
+  x: "+=100",
+  duration: 0.5,
+  ease: "power1.inOut",
+  repeat: -1,
+  yoyo: true,
+});

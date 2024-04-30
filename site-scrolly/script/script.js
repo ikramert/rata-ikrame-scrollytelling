@@ -82,7 +82,7 @@ gsap.to(".bulles2", {
     trigger: ".bulles2",
     scrub: 1,
     start: "center 90%",
-    end: "95% 30%",
+    end: "100% 30%",
   },
   y: 100,
   duration: 1,
@@ -99,17 +99,6 @@ gsap.fromTo(
     ease: "none",
   }
 );
-
-gsap.registerPlugin(ScrollTrigger);
-
-// Sprite sous marine
-gsap.to(".sprite", {
-  backgroundPosition: "-900px 0px",
-  ease: "steps(9)",
-  duration: 1,
-  repeat: -1,
-});
-
 //Monstre chapitre 5
 gsap.to(".monstreimg", {
   x: "+=100",
@@ -117,4 +106,21 @@ gsap.to(".monstreimg", {
   ease: "power1.inOut",
   repeat: -1,
   yoyo: true,
+});
+
+// Sprite sous marine
+gsap.to(".sous-marin", {
+  backgroundPosition: "-1000px 0px",
+  ease: "steps(9)",
+  duration: 1,
+  repeat: -1,
+});
+
+// Chapitre 6
+gsap.to(".tentacules", {
+  y: "+=200px", // Déplace l'élément de -1000px à 1000px verticalement
+  ease: "power1.inOut",
+  duration: 2,
+  yoyo: true, // Fait revenir l'animation à son point de départ
+  repeat: -1, // Répète l'animation indéfiniment
 });

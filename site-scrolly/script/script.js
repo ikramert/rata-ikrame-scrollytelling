@@ -62,6 +62,32 @@ gsap.to(".meduseroseimg", {
   duration: 1,
 });
 
+//Bulles
+
+gsap.to(".bulles1", {
+  scrollTrigger: {
+    markers: true,
+    trigger: ".bulles1",
+    scrub: 1,
+    start: "center 65%",
+    end: "85% 10%",
+  },
+  y: 100,
+  duration: 1,
+});
+
+gsap.to(".bulles2", {
+  scrollTrigger: {
+    markers: true,
+    trigger: ".bulles2",
+    scrub: 1,
+    start: "center 90%",
+    end: "95% 30%",
+  },
+  y: 100,
+  duration: 1,
+});
+
 // Animation pour le sous-marin bleu
 gsap.fromTo(
   ".sousmarinbleu",

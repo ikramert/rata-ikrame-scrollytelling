@@ -74,8 +74,6 @@ gsap.fromTo(
   }
 );
 
-gsap.registerPlugin(ScrollTrigger);
-
 // Sprite sous marine
 gsap.to(".sprite", {
   backgroundPosition: "-900px 0px",

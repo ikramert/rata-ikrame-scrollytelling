@@ -20,6 +20,43 @@ header {
   position: relative;
 }
 /*--------------------------------------------- STYLES GLOBALES -------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Oswald";
+}
+
+main {
+  overflow-y: visible;
+  height: 100vh;
+  width: 100vw;
+}
+
+section {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid red;
+  position: relative;
+}
+
+.titreHistoire {
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4vw;
+  color: var(--off-white);
+  text-align: center;
+}
 
 .titre {
   font-size: 40px;
@@ -44,13 +81,13 @@ h1 {
   color: var(--off-white);
 }
 
-h3 {
+.histoire {
   position: relative;
-  top: 30%;
   text-align: center;
+  left: 30vw;
   width: 100%;
   font-size: 2rem;
-  color: #ff69b4;
+  color: var(--rose-deux);
 }
 
 h4 {
@@ -83,6 +120,12 @@ h4 {
   h1 {
     font-size: 3vw;
   }
+}
+
+.description {
+  position: absolute;
+  width: 50vw;
+  top: 50%;
 }
 
 #defilezbtn {
@@ -163,13 +206,6 @@ h4 {
   position: absolute;
 }
 
-.spritemarin {
-  width: 100px;
-  height: 100px;
-  background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
-  background-repeat: no-repeat;
-}
-
 body.is-scrolling .spritemarin {
   animation-play-state: running;
 }
@@ -195,57 +231,71 @@ body.is-scrolling .spritemarin {
 
 /*--------------------------------------------- Chapitre 5 ------------------------------------*/
 #decouverte-tresor {
-  background-image: url("../img/img_arriere_plan/chapitre_5/arriere-plan-chp5.png");
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #3586ff;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #3586ff;
 }
 
 .tresorimg {
   position: absolute;
-  right: 37vw;
-  bottom: 2.5vh;
+  left: 38vw;
+  bottom: 2vw;
+  z-index: 1003;
 }
 
-.sous-marin {
+.wave {
   position: absolute;
-  bottom: 20vh;
-  left: 8vw;
-  width: 30vw;
-  aspect-ratio: 1/1;
-  background-size: 100% 4800%;
-  background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
-  animation: Sousmarin 2s steps(48) infinite;
-  border: 2px solid red;
-  margin: 0 auto;
-}
-
-body.is-scrolling .sprite1 {
-  animation-play-state: running;
-}
-
-@keyframes Sousmarin {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 0 -4800%;
-  }
-}
-
-/*.parallax-container {
-  position: relative;
-  overflow: hidden;
-  height: 100vh; 
-
-
-.parallax-image {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  bottom: 0;
+  left: 0;
   width: 100%;
-  min-height: 100%;
-  transition: transform 0.3s ease-out;
-  will-change: transform;
-} */
+  height: 100px;
+  background: url("../img/img_elements_visuels/wave.png");
+  background-size: 1000px 100px;
+  animation: animate 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.25s);
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  background-position: 400px;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  background-position: 300px;
+}
+
+.wave#wave3 {
+  z-index: 998;
+  opacity: 0.2;
+  background-position: 200px;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  background-position: 100px;
+}
 
 /*--------------------------------------------- Chapitre 6 ------------------------------------*/
 #confrontation {
@@ -282,38 +332,6 @@ body.is-scrolling .sprite2 {
 /*--------------------------------------------- SECTION FIN -------------------------------------------------------*/
 /*--------------------------------------------- SECTION FIN-------------------------------------------------------*/
 /*--------------------------------------------- SECTION FIN -------------------------------------------------------*/
-body {
-  width: 100vw;
-  overflow-x: hidden;
-  font-family: "Oswald";
-}
-
-main {
-  overflow-y: visible;
-  height: 100vh;
-  width: 100vw;
-}
-
-section {
-  overflow-y: scroll;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  border: 1px solid red;
-  position: relative;
-}
-
-.titreHistoire {
-  position: relative;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 4vw;
-  color: var(--off-white);
-  text-align: center;
-}
-
 /*--------------------------------------------- FOOTER -------------------------------------------------------*/
 
 footer {
@@ -330,9 +348,13 @@ footer {
   position: absolute;
   color: var(--off-white);
   font-weight: bold;
-  bottom: 5vw;
-  left: 17vw;
+  bottom: 10vw;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 2vw;
   border-radius: 1rem;
-  background-color: rgb(213, 82, 160, 0.8);
+  background-color: rgba(213, 82, 160, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  width: auto;
+  text-align: center;
 }

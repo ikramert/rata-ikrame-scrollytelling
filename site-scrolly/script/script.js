@@ -108,6 +108,22 @@ gsap.to(".monstreimg", {
   yoyo: true,
 });
 
+// Timeline vagues
+document.querySelectorAll(".wave").forEach((wave) => {
+  gsap.to(wave, {
+    backgroundPositionX: "-1000px",
+    ease: "none",
+    scrollTrigger: {
+      trigger: wave,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+      toggleActions: "play none none reverse",
+      markers: true,
+    },
+  });
+});
+
 // Sprite sous marine
 gsap.to(".sous-marin", {
   backgroundPosition: "-1000px 0px",

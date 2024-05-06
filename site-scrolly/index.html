@@ -10,7 +10,7 @@
   <body>
     <header>
       <h1 class="titreHistoire">À la poursuite du Trésor</h1>
-      <h3 class="description">
+      <h3 class="description histoire">
         Projet scrollytelling qui raconte une fameuse chasse au trésor.
       </h3>
       <!--Icone pour defiler-->
@@ -1179,7 +1179,7 @@
           </g>
         </svg>
 
-        <div class="sousmarin sprite1"></div>
+        <div id="submarine-container" class="submarine"></div>
       </section>
 
       <!----------------------------------------------- Chapitre 4 ------------------------------------------------------------------>
@@ -1230,8 +1230,8 @@
           C'est le temps de recuperer le trésor! Utilisez la clé pour ouvrir le
           cadenas.
         </h4>
-
         <img
+          height="300px"
           class="tresorimg"
           src="./img/img_elements_visuels/tresor2.png"
           alt="tresor"
@@ -1397,16 +1397,13 @@
           src="./img/img_elements_visuels/tresor.png"
           alt="tresor"
         />
-
-        <!----Parralax
-                  chp-5-3 premiere image
-                  chp-5-4 deuxieme image
-                  chp-5-5 troisieme image
-                  z-index
                   ------->
-        <div class="parallax1"></div>
-        <div class="parallax2"></div>
-        <div class="parallax3"></div>
+
+        <!--Parallax-->
+        <div class="wave" id="wave1" style="--i: 1"></div>
+        <div class="wave" id="wave2" style="--i: 2"></div>
+        <div class="wave" id="wave3" style="--i: 3"></div>
+        <div class="wave" id="wave4" style="--i: 4"></div>
       </section>
 
       <!----------------------------------------------- Chapitre 6 ------------------------------------------------------------------>

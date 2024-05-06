@@ -125,18 +125,19 @@ document.querySelectorAll(".wave").forEach((wave) => {
 });
 
 // Sprite sous marine
-gsap.to(".sous-marin", {
+gsap.to(".sousmarin", {
   backgroundPosition: "-1000px 0px",
-  ease: "steps(9)",
-  duration: 1,
+  ease: "steps(48)",
+  duration: 2,
+  y: "4800px",
   repeat: -1,
 });
 
 // Chapitre 6
 gsap.to(".tentacules", {
-  y: "+=200px", // Déplace l'élément de -1000px à 1000px verticalement
+  y: "+=200px",
   ease: "power1.inOut",
   duration: 2,
-  yoyo: true, // Fait revenir l'animation à son point de départ
-  repeat: -1, // Répète l'animation indéfiniment
+  yoyo: true,
+  repeat: -1,
 });

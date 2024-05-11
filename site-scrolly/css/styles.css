@@ -9,8 +9,9 @@
   --rose-deux: #d552a0;
   --off-white: #fffff2;
 }
-
+/*---------------------------------------------------------------------------------------------------------------------*/
 /*--------------------------------------------- HEADER -------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------------------*/
 header {
   width: 100%;
   height: 100vh;
@@ -19,11 +20,34 @@ header {
   background-position: center;
   position: relative;
 }
+/*---------------------------------------------------------------------------------------------------------------------*/
 /*--------------------------------------------- STYLES GLOBALES -------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------------------*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+ul.technique-gsap {
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 10px;
+  font-family: monospace;
+  font-weight: 400;
+  width: auto;
+  display: inline-block;
+  padding: 10px 20px 12px 20px;
+  margin: 0;
+  max-width: 300px;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+
+ul.technique-gsap li {
+  margin: 5px 0;
 }
 
 body {
@@ -48,7 +72,7 @@ section {
 }
 
 .titreHistoire {
-  position: relative;
+  position: absolute;
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
@@ -58,10 +82,10 @@ section {
 }
 
 .titre {
-  font-size: 40px;
+  font-size: 2.5rem;
   color: var(--off-white);
   text-align: center;
-  margin-top: 0;
+  margin-top: 5vh;
   margin-bottom: 20px;
   width: 100%;
   position: absolute;
@@ -71,7 +95,7 @@ section {
 }
 
 h1 {
-  position: relative;
+  position: absolute;
   top: 5vh;
   padding: 0 20px;
   text-align: center;
@@ -80,13 +104,13 @@ h1 {
   color: var(--off-white);
 }
 
-.histoire {
-  position: relative;
+.histoire /*titre description */ {
+  position: absolute;
   text-align: center;
-  left: 30vw;
-  width: 100%;
+  left: 25vw;
+  width: 100vw;
   font-size: 2rem;
-  color: var(--rose-deux);
+  color: var(--off-white);
 }
 
 h4 {
@@ -143,8 +167,10 @@ h4 {
 }
 
 /*--------------------------------------------- Section pour chapitres -------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------*/
 /*--------------------------------------------- Chapitre 1 ------------------------------------*/
-#plongee {
+/*----------------------------------------------------------------------------------------------*/
+#chapitre1 {
   position: relative;
   background-image: url("../img/img_arriere_plan/chapitre_1/arriere-plan-chp1.png");
   background-size: cover;
@@ -168,9 +194,10 @@ h4 {
   left: 5%;
   top: 20%;
 }
-
+/*----------------------------------------------------------------------------------------------*/
 /*--------------------------------------------- Chapitre 2 ------------------------------------*/
-#exploration {
+/*----------------------------------------------------------------------------------------------*/
+#chapitre2 {
   background-image: url("../img/img_arriere_plan/chapitre_2/arriere-plan-chp2.png");
 }
 .jumellesimg {
@@ -191,9 +218,10 @@ h4 {
   left: 20%;
   top: 50%;
 }
-
-/*--------------------------------------------- Chapitre 3 ------------------------------------*/
-#traversee {
+/*----------------------------------------------------------------------------------------------*/
+/*--------------------------------------------- Chapitre 3 -------------------------------------*/
+/*----------------------------------------------------------------------------------------------*/
+#chapitre3 {
   background-image: url("../img/img_arriere_plan/chapitre_3/arriere-plan-chp3.png");
 }
 
@@ -211,18 +239,19 @@ h4 {
   right: 35vw;
   width: 30vw;
   aspect-ratio: 1/1;
-  background-size: 4800% 100%;
+  background-size: 100% 4800%;
   background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
-  animation: playSprite 2s steps(48) infinite;
   margin: 0 auto;
-  opacity: 0.9;
+  opacity: 1;
+  z-index: 10;
 }
 body.is-scrolling .sprite1 {
   animation-play-state: running;
 }
-
+/*----------------------------------------------------------------------------------------------*/
 /*--------------------------------------------- Chapitre 4 ------------------------------------*/
-#rencontre {
+/*----------------------------------------------------------------------------------------------*/
+#chapitre4 {
   background-image: url("../img/img_arriere_plan/chapitre_4/arriere-plan-chp4.png");
 }
 
@@ -231,20 +260,27 @@ body.is-scrolling .sprite1 {
   right: 40%;
   bottom: 3%;
 }
-
+/*----------------------------------------------------------------------------------------------*/
 /*--------------------------------------------- Chapitre 5 ------------------------------------*/
-#decouverte-tresor {
+/*----------------------------------------------------------------------------------------------*/
+#chapitre5 {
   position: relative;
   width: 100%;
   height: 1000px;
-  background: #3586ff;
+  background: var(--bleu-pale);
 }
 
 section {
-  position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background: #3586ff;
+  margin: 0;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
 }
 
 .tresorimg {
@@ -276,32 +312,37 @@ section {
   }
 }
 
-.wave#wave1 {
+#svg1 {
+  z-index: 1005;
+}
+
+.wave1 {
   z-index: 1000;
   opacity: 1;
   background-position: 700px;
 }
 
-.wave#wave2 {
+.wave2 {
   z-index: 999;
   opacity: 0.5;
   background-position: 600px;
 }
 
-.wave#wave3 {
+.wave3 {
   z-index: 998;
   opacity: 0.2;
   background-position: 500px;
 }
 
-.wave#wave4 {
+.wave4 {
   z-index: 999;
   opacity: 0.7;
   background-position: 400px;
 }
-
+/*----------------------------------------------------------------------------------------------*/
 /*--------------------------------------------- Chapitre 6 ------------------------------------*/
-#confrontation {
+/*----------------------------------------------------------------------------------------------*/
+#chapitre6 {
   background-image: url("../img/img_arriere_plan/chapitre_6/arriere-plan-chp6.png");
 }
 
@@ -336,24 +377,14 @@ body.is-scrolling .sprite2 {
 /*--------------------------------------------- SECTION FIN -------------------------------------------------------*/
 /*--------------------------------------------- FOOTER -------------------------------------------------------*/
 
-footer {
-  text-align: center;
-  font-size: 17px;
-}
-
-.titreCredits {
-  font-size: 17px;
-  text-decoration: underline;
-}
-
 .credits {
   position: absolute;
   color: var(--off-white);
-  font-weight: bold;
-  bottom: 10vw;
+  bottom: 15vw;
   left: 50%;
+  font-size: 1.2rem;
   transform: translateX(-50%);
-  padding: 2vw;
+  padding: 1vw;
   border-radius: 1rem;
   background-color: rgba(213, 82, 160, 0.8);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);

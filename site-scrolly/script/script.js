@@ -1,6 +1,12 @@
+//Gratuits
 gsap.registerPlugin(ScrollTrigger);
-//gsap.registerPlugin(MorphSVGPlugin);
 gsap.registerPlugin(MotionPathPlugin);
+
+// Payants
+/*
+gsap.registerPlugin(DrawSVGPlugin);
+gsap.registerPlugin(MorphSVGPlugin);
+*/
 
 // ----------
 // ----------
@@ -66,7 +72,11 @@ chapitre1
     { x: "100%" },
     { x: "-100%", duration: 15, ease: "power1.inOut" },
     "0"
-  );
+  )
+  // Animation de l'arrière-plan
+  .to(".bleuarriere1", { y: "-10vh", scale: 1.8, ease: "slow", duration: 5 }, 0)
+  .to(".bleuarriere2", { y: "-3vh", scale: 1.2, ease: "slow", duration: 5 }, 0)
+  .to(".bleudevant1", { scale: 1.2, ease: "slow", duration: 5 }, 0);
 
 // ----------
 // ----------
@@ -87,8 +97,11 @@ const chapitre2 = gsap.timeline({
 chapitre2
   .to(".medusebleuimg", { duration: 2, y: -300, ease: "power1.inOut" }, "0")
   .to(".meduseroseimg", { duration: 2, y: -300, ease: "power1.inOut" }, "0")
-  .to(".jumellesimg", { rotation: 180, duration: 5 })
-  .to(".jumellesimg", { y: "100vh", ease: "sine", duration: 5 });
+  .fromTo(
+    ".jumellesimg",
+    { y: 0, x: 0, rotation: 0 },
+    { y: "100vh", x: "50vw", rotation: 180, ease: "sine", duration: 5 }
+  );
 
 gsap.to(".jumellesimg", {
   scrollTrigger: {
@@ -140,14 +153,44 @@ gsap.to(".sousmarinbleu", {
 // CHAPITRE 4
 // ----------
 // ----------
-gsap.to(".monstreimg", {
-  x: "+=100",
-  duration: 0.5,
-  ease: "power1.inOut",
-  repeat: -1,
-  yoyo: true,
+
+const chapitre4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#chapitre4",
+    start: "top center",
+    end: "bottom center",
+    scrub: true,
+    markers: false,
+  },
 });
 
+// Animation pour .monstreimg
+chapitre4.fromTo(
+  ".monstreimg",
+  {
+    x: "0",
+  },
+  {
+    x: "+=100",
+    duration: 5,
+    ease: "power1.inOut",
+    repeat: -1,
+    yoyo: true,
+  },
+  0
+);
+
+gsap.fromTo(
+  ".poissonrouge",
+  { x: "100vw" },
+  { x: "-100vw", duration: 10, ease: "power1.inOut", repeat: -1 }
+);
+
+gsap.fromTo(
+  ".sousmarinbleu2",
+  { x: "100vw" },
+  { x: "-100vw", duration: 10, ease: "power1.inOut", repeat: -1 }
+);
 // ----------
 // ----------
 // CHAPITRE 5
@@ -167,10 +210,23 @@ const chapitre5 = gsap.timeline({
 
 chapitre5
   // Animation de l'arrière-plan
-  .to(".plainearriere", { y: "-10vh", scale: 1.8, ease: "slow", duration: 5 })
-  .to(".plainearriere2", { y: "-3vh", scale: 1.2, ease: "slow", duration: 5 })
-  .to(".plaineavant", { ease: "slow", duration: 5 })
-  .to(".rochesavant", { y: "-3vh", ease: "slow", scale: 1.2, duration: 5 })
+  .to(
+    ".plainearriere",
+    { y: "-10vh", scale: 1.8, ease: "slow", duration: 5 },
+    0
+  )
+  .to(
+    ".plainearriere2",
+    { y: "-3vh", scale: 1.2, ease: "slow", duration: 5 },
+    0
+  )
+  .to(".plaineavant", { scale: 1.2, ease: "slow", duration: 5 }, 0)
+  .to(".rochesavant", { ease: "slow", scale: 1.2, duration: 5 }, 0)
+  /*.to(".cle", {
+    duration: 3,
+    ease: "power1.inOut",
+    morphSVG: ".cadenas",
+  }) */
   .to(".tresorimg", { x: "50vw", duration: 5 }) // Déplacement horizontal initial du trésor
   .to(".tresorimg", { y: "70vh", duration: 2, ease: "power1.inOut" }) // Chute vers le bas
   .to(".tresorimg", { rotation: 90, duration: 1, ease: "power1.inOut" });
@@ -189,17 +245,15 @@ const chapitre6 = gsap.timeline({
     scrub: 1,
   },
 });
-
-// Animation for ".animation-trace" with whirlpool effect and scaling
 chapitre6
   .to(".animation-trace", {
     motionPath: {
-      path: "M 20 20 Q 40 100 80 100 Q 120 100 160 50 Q 200 0 240 50 Q 280 100 320 100 Q 360 100 400 20",
+      path: "M 20 20 C 40 120, 160 120, 200 20 C 240 -80, 360 -80, 400 20",
       autoRotate: true,
       align: "self",
       alignOrigin: [0.5, 0.5],
     },
-    scale: 0.5, // Starts at half size
+    scale: 0.5,
     transformOrigin: "center center",
     ease: "power1.inOut",
     duration: 5,
@@ -209,15 +263,14 @@ chapitre6
     { scale: 0.5 },
     { scale: 1, duration: 5, ease: "none" },
     0
+  )
+  .fromTo(
+    ".tentacules",
+    { y: "-100%" }, // position de départ
+    {
+      y: "80%",
+      duration: 6,
+      ease: "none",
+    },
+    0
   );
-
-// Animation for ".tentacules"
-chapitre6.to(
-  ".tentacules",
-  {
-    y: 300, // Vertical movement
-    duration: 1,
-    ease: "none",
-  },
-  0
-);

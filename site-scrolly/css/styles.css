@@ -108,6 +108,7 @@ h1 {
   position: absolute;
   text-align: center;
   left: 25vw;
+  padding-bottom: 5vh;
   width: 100vw;
   font-size: 2rem;
   color: var(--off-white);
@@ -184,6 +185,7 @@ h4 {
   top: 30vh;
   width: 50vmax;
   height: auto;
+  z-index: 3;
 }
 
 .poissoncolore {
@@ -200,6 +202,34 @@ h4 {
   top: 10vh;
   width: 50vmin;
   height: auto;
+  z-index: 7;
+}
+
+.bleudevant1 {
+  position: absolute;
+  width: 100vmax;
+  height: 30vh;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+}
+
+.bleuarriere1 {
+  position: absolute;
+  width: 40vmax;
+  height: 30vmax;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.bleuarriere2 {
+  position: absolute;
+  width: 50vmax;
+  height: 20vh;
+  bottom: 1vh;
+  right: 0;
+  z-index: -1;
 }
 
 /*----------------------------------------------------------------------------------------------*/
@@ -210,8 +240,8 @@ h4 {
 }
 .jumellesimg {
   position: absolute;
-  bottom: 10vh;
-  left: 30vw;
+  top: 10vh;
+  left: 30vmax;
   width: 50vmin;
   height: auto;
 }
@@ -260,7 +290,7 @@ h4 {
   animation: sousmarinplay 2s steps(48) infinite;
 }
 
-body.is-scrolling .sprite1 {
+body.is-scrolling .sprite1.sprite2 {
   animation-play-state: running;
 }
 
@@ -285,12 +315,33 @@ svg {
   height: auto;
 }
 
+.poissonrouge {
+  position: absolute;
+  width: 30vmin;
+  height: 15vmin;
+  right: 0;
+  top: 25vh;
+}
+
 .monstreimg {
   position: absolute;
   bottom: 8vh;
   left: 35vw;
   width: 40vmin;
   height: auto;
+}
+
+.sousmarinbleu2 {
+  position: absolute;
+  top: 20vh;
+  right: 0;
+  width: 50vmin;
+  height: auto;
+  aspect-ratio: 1/1;
+  background-size: 100% 4800%;
+  background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
+  transform: scaleX(-1);
+  animation: sousmarinplay 2s steps(48) infinite;
 }
 /*----------------------------------------------------------------------------------------------*/
 /*--------------------------------------------- Chapitre 5 ------------------------------------*/
@@ -305,7 +356,7 @@ section#chapitre5 {
   left: 0;
   width: 27vmin;
   height: auto;
-  z-index: 3;
+  z-index: 4;
 }
 
 .plaineavant {
@@ -337,7 +388,7 @@ section#chapitre5 {
   width: 50vmax;
   bottom: 10vh;
   left: 25vw;
-  z-index: 4;
+  z-index: 3;
 }
 
 svg {
@@ -349,6 +400,27 @@ svg {
 }
 #cadenas {
   visibility: hidden;
+}
+
+.texte-voix1 {
+  position: absolute;
+  color: var(--off-white);
+  font-size: 6vw;
+  top: 30vh;
+  left: 45vw;
+  opacity: 0;
+  z-index: 3;
+}
+
+.overlay-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0;
+  z-index: 10;
 }
 
 /*----------------------------------------------------------------------------------------------*/
@@ -403,17 +475,16 @@ body.is-scrolling .sprite2 {
 
 .credits {
   position: absolute;
-  color: var(--off-white);
-  bottom: 15vw;
-  left: 50%;
-  max-width: 60vmax;
-  max-height: 30vmin;
-  font-size: 1rem;
-  transform: translateX(-50%);
-  padding: 1vw;
-  border-radius: 1rem;
-  background-color: rgba(213, 82, 160, 0.8);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  width: auto;
+  color: var(--bleu-fonce);
+  font-weight: light;
+  width: 70vw;
+  background-color: var(--jaune);
+  border-radius: 5vh;
+  padding: 2vh;
+  font-size: 0.9rem;
   text-align: center;
+  top: 50%;
+  left: 50%;
+  margin-top: 10vmin;
+  transform: translate(-50%, 100%);
 }

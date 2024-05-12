@@ -1,6 +1,6 @@
-// GSAP - Importation du plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(MorphSVGPlugin);
+//gsap.registerPlugin(MorphSVGPlugin);
+//gsap.registerPlugin(MotionPathPlugin);
 
 // ----------
 // ----------
@@ -17,21 +17,57 @@ gsap.to("#defilezbtn img, span", {
   yoyo: true,
 });
 
-// Gestion du défilement et ajout/suppression d'une classe
-let minuteur;
-function defilement() {
+// Spritesheet
+window.addEventListener("scroll", function () {
   document.body.classList.add("is-scrolling");
-  clearTimeout(minuteur);
-  minuteur = setTimeout(function () {
+
+  clearTimeout(timer);
+
+  let timer = setTimeout(function () {
     document.body.classList.remove("is-scrolling");
   }, 100);
-}
+});
 
 // ----------
 // ----------
 // CHAPITRE 1
 // ----------
 // ----------
+const chapitre1 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#chapitre1",
+    start: "top top",
+    end: "bottom top",
+    scrub: 3,
+    pin: true,
+    markers: false,
+  },
+});
+
+chapitre1
+  .fromTo(
+    ".sousmarinrouge",
+    { x: "-100%" }, // position de départ
+    {
+      x: "100%",
+      rotation: 1080, // rotation complète
+      duration: 15,
+      ease: "power1.inOut",
+    },
+    "0"
+  )
+  .fromTo(
+    ".poissoncolore",
+    { x: "100%" },
+    { x: "-100%", duration: 15, ease: "power1.inOut" },
+    "0"
+  )
+  .fromTo(
+    ".groupepoisson",
+    { x: "100%" },
+    { x: "-100%", duration: 15, ease: "power1.inOut" },
+    "0"
+  );
 
 // ----------
 // ----------
@@ -51,70 +87,14 @@ const chapitre2 = gsap.timeline({
 });
 
 chapitre2
-  .to(".medusebleuimg", { duration: 3, y: 100 })
-  .to(".meduseroseimg", { duration: 3, y: 100 }, "<");
+  .to(".medusebleuimg", { duration: 2, y: -300, ease: "power1.inOut" }, "0")
+  .to(".meduseroseimg", { duration: 2, y: -300, ease: "power1.inOut" }, "0")
+  .to(".jumellesimg", { rotation: 180, duration: 5 })
+  .to(".jumellesimg", { y: "100vh", ease: "sine", duration: 5 });
 
-// Chapitre 2 Les meduses
-/*gsap.to(".medusebleuimg", {
-  y: 100,
-  duration: 1,
-});
-
-gsap.to(".meduseroseimg", {
+gsap.to(".jumellesimg", {
   scrollTrigger: {
-    //markers: true,
-    trigger: ".meduseroseimg",
-    scrub: 1,
-    start: "top 75%",
-    end: "85% 20%",
-  },
-  y: 100,
-  duration: 1,
-});*/
-
-// ----------
-// ----------
-// CHAPITRE 3
-// ----------
-// ----------
-
-// ----------
-// ----------
-// CHAPITRE 4
-// ----------
-// ----------
-
-// ----------
-// ----------
-// CHAPITRE 5
-// ----------
-// ----------
-
-const chapitre5 = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#chapitre5",
-    start: "top 75%",
-    end: "bottom 20%",
-    scrub: 3,
-    pin: true,
-    markers: false,
-  },
-});
-
-chapitre5
-  .to(".cle", { duration: 3, y: 100 })
-  .to(".cadenas", { duration: 3, y: 100 }, "<");
-
-// ----------
-// ----------
-// CHAPITRE 6
-// ----------
-// ----------
-
-//Animation du sous marin 1
-gsap.to(".sousmarin", {
-  scrollTrigger: {
-    trigger: "#chapitre3",
+    trigger: "#chapitre2",
     start: "top top",
     end: "bottom top",
     toggleActions: "play pause reverse pause",
@@ -124,34 +104,45 @@ gsap.to(".sousmarin", {
   backgroundPositionY: "4800%",
   ease: "steps(48)",
 });
-//Animation du groupe de poisson
 
-//Chapitre 3 Bulles
-gsap.to(".bulles1", {
+// ----------
+// ----------
+// CHAPITRE 3
+// ----------
+// ----------
+const chapitre3 = gsap.timeline({
   scrollTrigger: {
-    //markers: true,
     trigger: "#chapitre3",
-    scrub: 1,
-    start: "center 75%",
-    end: "75% 10%",
+    start: "center center",
+    end: "bottom top",
+    scrub: 3,
+    pin: true,
+    markers: false,
   },
-  y: 100,
-  duration: 1,
 });
 
-gsap.to(".bulles2", {
+// Démarre les deux animations en même temps
+chapitre3
+  .to(".bulles1", { duration: 3, y: -100 }, "0")
+  .to(".bulles2", { duration: 3, y: -300 }, "0");
+
+gsap.to(".sousmarinbleu", {
   scrollTrigger: {
-    //markers: true,
     trigger: "#chapitre3",
-    scrub: 1,
-    start: "center 90%",
-    end: "100% 30%",
+    start: "center bottom",
+    end: "bottom top",
+    scrub: true,
   },
-  y: 100,
-  duration: 1,
+  x: "100vw",
+  duration: 10,
+  ease: "power1.inOut",
 });
 
-// Chapitre 5 Monstre
+// ----------
+// ----------
+// CHAPITRE 4
+// ----------
+// ----------
 gsap.to(".monstreimg", {
   x: "+=100",
   duration: 0.5,
@@ -160,11 +151,39 @@ gsap.to(".monstreimg", {
   yoyo: true,
 });
 
+// ----------
+// ----------
+// CHAPITRE 5
+// ----------
+// ----------
+
+let anim = gsap.to("#cle", {
+  scrollTrigger: {
+    trigger: "#cle",
+    start: "top center",
+    end: "bottom center",
+    scrub: true,
+  },
+  morphSVG: "#cadenas",
+  duration: 1,
+});
+// ----------
+// ----------
+// CHAPITRE 6
+// ----------
+// ----------
+
+//Animation du sous marin 1
+
+//Animation du groupe de poisson
+
+// Chapitre 5 Monstre
+
 // Chapitre 6 Tentacules
 gsap.to(".tentacules", {
   scrollTrigger: {
     //markers: true,
-    trigger: ".bulles1",
+    trigger: "#chapitre6",
     scrub: 1,
     start: "center 65%",
     end: "85% 10%",

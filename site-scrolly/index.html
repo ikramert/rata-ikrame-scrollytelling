@@ -48,6 +48,17 @@
           src="./img/img_elements_visuels/sousmarin_rouge.png"
           alt="Sous marin rouge"
         />
+        <img
+          class="poissoncolore"
+          src="./img/img_personnages/poisson_colore.png"
+          alt="poisson colore"
+        />
+
+        <img
+          class="groupepoisson"
+          src="./img/img_personnages/groupe-poisson1.png"
+          alt="groupe de poissons"
+        />
       </section>
       <!----------------------------------------------------------------------------------------------------------------------------->
       <!----------------------------------------------------------------------------------------------------------------------------->
@@ -123,8 +134,7 @@
           src="./img/img_elements_visuels/bulles-2.svg"
           alt="bulles 2"
         />
-
-        <div class="sousmarin sprite1"></div>
+        <div class="sousmarinbleu sprite1"></div>
       </section>
 
       <!----------------------------------------------------------------------------------------------------------------------------->
@@ -145,14 +155,33 @@
           </li>
         </ul>
         <h2 class="titre 4">
-          Oh non! Il faut éviter le monstre Glouglou et prendre la clé.
+          Oh non! Il faut éviter le monstre et prendre la clé.
         </h2>
         <h4 class="description tache4">
-          Assurez-vous de récuperer la clé sans vous faire attraper par le
-          monstre méchant.
+          Assurez-vous de suivre la flèche pour pas vous faire attraper par
+          Glougou.
         </h4>
-
-        <!--SpriteSheet sous-marin-->
+        <!--Fleche SVG-->
+        <svg
+          class="fleche"
+          xmlns="http://www.w3.org/2000/svg"
+          width="1600"
+          height="640"
+          viewBox="0 0 1600 640"
+        >
+          <path
+            id="motionPathFleche"
+            d="M90.5,129.5c214.76,310.05,373.88,359.19,476,352,206.75-14.56,288.07-267.65,528-291,163.27-15.89,305,83.85,390,158"
+            fill="none"
+            stroke="#000"
+            stroke-miterlimit="10"
+          />
+          <polygon
+            id="fleche"
+            points="66.5 22.5 23.2 97.5 109.8 97.5 66.5 22.5"
+            fill="#29abe2"
+          />
+        </svg>
         <img
           class="monstreimg"
           src="./img/img_personnages/monstre_sous_marin.png"
@@ -188,36 +217,24 @@
           alt="tresor"
         />
 
-        <!-- First SVG -->
-        <svg
-          class="cle"
-          id="svg1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 269.87 360"
-        >
-          <path id="path1" d="M251.6,148.32H75.88c-..." fill="#000" />
-        </svg>
-
-        <svg
-          class="cadenas"
-          id="svg2"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 897.66 360"
-          style="display: none"
-        >
+        <!-- Morph SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360">
           <path
-            id="path2"
-            d="M0,260.24l48.52-40.27,188.75-2.57v-14.99c9.01..."
-            fill="#000"
+            class="cle"
+            id="cle"
+            d="M0,260.24l48.52-40.27,188.75-2.57v-14.99c9.01,2.75,22.01,5.22,33,0,12.4-5.89,12.36-16.86,23.78-26.56,12.92-10.98,30.35-11.72,47.07-12.42,14.98-.63,55.35-2.34,85.4,24.85,27.18,24.59,27.18,56.44,27.17,65.97-.03,30.92-15.89,72.92-58.23,91.24-6.67,2.89-41.01,17.75-69.87,5.57-22.38-9.45-28.41-29.65-57.26-36.41-9.83-2.3-18.41-2.13-23.78-1.71l-.49-20.56-65.51-.43-17.95-20.99-8.25,17.56-17.47,1.29-21.84-22.28-27.66,24.42-36.39.43L0,260.24Z"
+            fill="#d8b712"
+          />
+          <path
+            class="cadenas"
+            id="cadenas"
+            d="M251.6,148.32H75.88c-.18-.3-.29-.62-.48-.92l-12.21-18.93h0c-18.29-28.36-9.42-65.87,19.78-83.65,14.14-8.6,30.9-11.37,47.18-7.72,16.26,3.61,30.11,13.18,38.97,26.9,0,.01.02.02.02.02l21.77,33.72c3.47,5.37,9.42,8.32,15.5,8.32,3.33,0,6.69-.87,9.7-2.71,8.56-5.2,11.14-16.17,5.79-24.48l-21.78-33.72s-.03-.05-.06-.08c-14.05-21.73-35.97-36.86-61.74-42.61-25.8-5.73-52.35-1.39-74.78,12.26C17.24,42.88,3.17,102.37,32.19,147.32h0s.64,1,.64,1h-14.54c-10.11,0-18.29,7.95-18.29,17.75v176.18c0,9.81,8.18,17.75,18.29,17.75h233.3c10.09,0,18.29-7.95,18.29-17.75v-176.17c.01-9.81-8.19-17.75-18.28-17.75Z"
+            fill="#d8b712"
           />
         </svg>
 
         <!--Parallax-->
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-        <div class="wave wave4"></div>
-        <div class="sec"></div>
+        <div class="parallax"></div>
       </section>
       <!----------------------------------------------------------------------------------------------------------------------------->
       <!----------------------------------------------------------------------------------------------------------------------------->
@@ -260,6 +277,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
     <script src="./script/script.js"></script>
   </body>
 </html>

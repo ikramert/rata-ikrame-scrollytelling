@@ -1,6 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 //gsap.registerPlugin(MorphSVGPlugin);
-//gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(MotionPathPlugin);
 
 // ----------
 // ----------
@@ -157,36 +157,42 @@ gsap.to(".monstreimg", {
 // ----------
 // ----------
 
-let anim = gsap.to("#cle", {
+//Timeline des animations chapitre 5
+const chapitre5 = gsap.timeline({
   scrollTrigger: {
-    trigger: "#cle",
-    start: "top center",
-    end: "bottom center",
-    scrub: true,
+    trigger: "#chapitre5",
+    start: "top top",
+    end: "bottom top",
+    scrub: 3,
+    pin: true,
+    markers: false,
   },
-  morphSVG: "#cadenas",
-  duration: 1,
 });
+
+chapitre5
+  // Animation de l'arrière-plan
+  .to(".plainearriere", { y: "-10vh", scale: 1.8, ease: "slow", duration: 5 })
+  .to(".plainearriere2", { y: "-5vh", scale: 1.2, ease: "slow", duration: 5 })
+  .to(".plaineavant", { ease: "slow", duration: 5 })
+  .to(".rochesavant", { y: "-3vh", ease: "slow", scale: 1.2, duration: 5 })
+  .to(".tresorimg", { x: "50vw", duration: 5 }) // Déplacement horizontal initial du trésor
+  .to(".tresorimg", { y: "70vh", duration: 2, ease: "power1.inOut" }) // Chute vers le bas
+  .to(".tresorimg", { rotation: 90, duration: 1, ease: "power1.inOut" });
+
 // ----------
 // ----------
 // CHAPITRE 6
 // ----------
 // ----------
 
-//Animation du sous marin 1
-
-//Animation du groupe de poisson
-
-// Chapitre 5 Monstre
-
 // Chapitre 6 Tentacules
 gsap.to(".tentacules", {
   scrollTrigger: {
-    //markers: true,
+    markers: true,
     trigger: "#chapitre6",
     scrub: 1,
-    start: "center 65%",
-    end: "85% 10%",
+    start: "top center",
+    end: "bottom center",
   },
   y: 100,
   duration: 1,

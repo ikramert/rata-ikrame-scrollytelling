@@ -40,7 +40,6 @@ const chapitre1 = gsap.timeline({
     end: "bottom top",
     scrub: 3,
     pin: true,
-    markers: false,
   },
 });
 
@@ -82,7 +81,6 @@ const chapitre2 = gsap.timeline({
     end: "bottom top",
     scrub: 3,
     pin: true,
-    markers: false,
   },
 });
 
@@ -117,7 +115,6 @@ const chapitre3 = gsap.timeline({
     end: "bottom top",
     scrub: 3,
     pin: true,
-    markers: false,
   },
 });
 
@@ -165,14 +162,13 @@ const chapitre5 = gsap.timeline({
     end: "bottom top",
     scrub: 3,
     pin: true,
-    markers: false,
   },
 });
 
 chapitre5
   // Animation de l'arrière-plan
   .to(".plainearriere", { y: "-10vh", scale: 1.8, ease: "slow", duration: 5 })
-  .to(".plainearriere2", { y: "-5vh", scale: 1.2, ease: "slow", duration: 5 })
+  .to(".plainearriere2", { y: "-3vh", scale: 1.2, ease: "slow", duration: 5 })
   .to(".plaineavant", { ease: "slow", duration: 5 })
   .to(".rochesavant", { y: "-3vh", ease: "slow", scale: 1.2, duration: 5 })
   .to(".tresorimg", { x: "50vw", duration: 5 }) // Déplacement horizontal initial du trésor
@@ -185,15 +181,43 @@ chapitre5
 // ----------
 // ----------
 
-// Chapitre 6 Tentacules
-gsap.to(".tentacules", {
+const chapitre6 = gsap.timeline({
   scrollTrigger: {
-    markers: true,
-    trigger: "#chapitre6",
-    scrub: 1,
+    trigger: ".animation-container",
     start: "top center",
     end: "bottom center",
+    scrub: 1,
   },
-  y: 100,
-  duration: 1,
 });
+
+// Animation for ".animation-trace" with whirlpool effect and scaling
+chapitre6
+  .to(".animation-trace", {
+    motionPath: {
+      path: "M 20 20 Q 40 100 80 100 Q 120 100 160 50 Q 200 0 240 50 Q 280 100 320 100 Q 360 100 400 20",
+      autoRotate: true,
+      align: "self",
+      alignOrigin: [0.5, 0.5],
+    },
+    scale: 0.5, // Starts at half size
+    transformOrigin: "center center",
+    ease: "power1.inOut",
+    duration: 5,
+  })
+  .fromTo(
+    ".animation-trace",
+    { scale: 0.5 },
+    { scale: 1, duration: 5, ease: "none" },
+    0
+  );
+
+// Animation for ".tentacules"
+chapitre6.to(
+  ".tentacules",
+  {
+    y: 300, // Vertical movement
+    duration: 1,
+    ease: "none",
+  },
+  0
+);

@@ -148,7 +148,7 @@ h4 {
 .description {
   position: absolute;
   width: 50vw;
-  top: 50%;
+  top: 50vh;
 }
 
 #defilezbtn {
@@ -287,8 +287,10 @@ svg {
 
 .monstreimg {
   position: absolute;
-  right: 40%;
-  bottom: 3%;
+  bottom: 8vh;
+  left: 35vw;
+  width: 40vmin;
+  height: auto;
 }
 /*----------------------------------------------------------------------------------------------*/
 /*--------------------------------------------- Chapitre 5 ------------------------------------*/
@@ -356,17 +358,29 @@ svg {
   background-image: url("../img/img_arriere_plan/chapitre_6/arriere-plan-chp6.png");
 }
 
+.animation-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Ajustez la hauteur selon vos besoins */
+}
+.animation-trace {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .tentacules {
   position: absolute;
-  bottom: 20vh;
-  right: 35vw;
-  width: 30vw;
+  bottom: 35vh;
+  left: 30vw;
+  width: 50vmin;
+  height: 50vmin;
   aspect-ratio: 1/1;
   background-size: 4800% 100%;
   background-image: url("../img/spritesheets/spritesheet_tentacules.png");
   animation: playSprite 2s steps(48) infinite;
   margin: 0 auto;
-  opacity: 0.9;
 }
 
 body.is-scrolling .sprite2 {
@@ -375,10 +389,10 @@ body.is-scrolling .sprite2 {
 
 @keyframes playSprite {
   from {
-    background-position: 0 0;
+    background-position: 0 100%;
   }
   to {
-    background-position: -4800% 0; /* Déplace horizontalement le fond pour montrer chaque frame */
+    background-position: -4800% 100%; /* Déplace verticalement le fond pour montrer chaque frame */
   }
 }
 
@@ -392,7 +406,9 @@ body.is-scrolling .sprite2 {
   color: var(--off-white);
   bottom: 15vw;
   left: 50%;
-  font-size: 1.2rem;
+  max-width: 60vmax;
+  max-height: 30vmin;
+  font-size: 1rem;
   transform: translateX(-50%);
   padding: 1vw;
   border-radius: 1rem;

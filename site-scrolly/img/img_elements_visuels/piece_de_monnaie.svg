@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 738.95 238.95">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d6bd2b;
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #d3d1cf;
+        font-family: Poppins-Bold, Poppins;
+        font-size: 102px;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <ellipse class="cls-1" cx="108.42" cy="127.37" rx="108.42" ry="111.58"/>
+  <text class="cls-2" transform="translate(74.74 163.86)"><tspan x="0" y="0">$</tspan></text>
+  <text/>
+</svg>

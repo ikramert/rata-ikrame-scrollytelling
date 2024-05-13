@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
     <title>À la poursuite du Trésor</title>
     <link rel="stylesheet" href="./css/styles.css" />
@@ -13,19 +13,13 @@
       <h3 class="description histoire">
         Projet scrollytelling qui raconte une fameuse chasse au trésor.
       </h3>
-      <!--Icone pour defiler-->
       <div id="defilezbtn">
-        <img src="./img/fleche-bas.png" alt="Défilez" />
-        <span>Défilez la page</span>
+        <img src="./img/fleche-bas.png" alt="Défilez" /><span
+          >Défilez la page</span
+        >
       </div>
     </header>
-
     <main>
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------- Chapitre 1 ------------------------------------------------------------------>
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre1" class="chapitre1">
         <ul class="technique-gsap">
           <li>
@@ -50,45 +44,50 @@
           Votre première tâche est de naviguer à travers un canyon sous-marin
           peuplé de poissons étranges.
         </h4>
+        <!--Optimisation taille hauteur normale-->
         <img
           class="sousmarinrouge"
           src="./img/img_elements_visuels/sousmarin_rouge.png"
           alt="Sous marin rouge"
+          width="200"
+          height="100"
         />
+
         <img
           class="poissoncolore"
           src="./img/img_personnages/poisson_colore.png"
           alt="poisson colore"
         />
-
         <img
           class="groupepoisson"
           src="./img/img_personnages/groupe-poisson1.png"
           alt="groupe de poissons"
+          width="600"
+          height="300"
         />
-
-        <!--Parallax-->
         <img
           class="bleuarriere1"
           src="./img/img_arriere_plan/chapitre_1/arriere-plan-chp1-1.png"
           alt="bleuarriere1"
+          width="800"
+          height="400"
         />
         <img
           class="bleuarriere2"
           src="./img/img_arriere_plan/chapitre_1/arriere-plan-chp1-2.png"
           alt="bleuarriere2"
+          width="600"
+          height="300"
         />
+
         <img
           class="bleudevant1"
           src="./img/img_arriere_plan/chapitre_1/arriere-plan-chp1-3.png"
           alt="bleudevant1"
+          width="1200"
+          height="600"
         />
       </section>
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------- Chapitre 2 ------------------------------------------------------------------>
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre2" class="chapitre2">
         <ul class="technique-gsap">
           <li>
@@ -115,25 +114,26 @@
           class="jumellesimg"
           src="./img/img_elements_visuels/jumelles_vision.png"
           alt="jumelles vision"
+          width="150"
+          height="75"
         />
 
         <img
           class="medusebleuimg"
           src="./img/img_personnages/meduse-bleu.png"
           alt="meduse bleu"
+          width="120"
+          height="60"
         />
+
         <img
           class="meduseroseimg"
           src="./img/img_personnages/meduse-rose.png"
           alt="meduse rose"
+          width="90"
+          height="45"
         />
       </section>
-
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------- Chapitre 3 ------------------------------------------------------------------>
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre3" class="chapitre3">
         <ul class="technique-gsap">
           <li>
@@ -157,27 +157,24 @@
           Prenez le sous-marin express! Il va vous aider à compléter la mission
           plus vite.
         </h4>
-        <!-- Contenu spécifique du chapitre 3 -->
-        <!--SVG Bulles 1-->
         <img
           class="bulles1"
           src="./img/img_elements_visuels/bulles-1.svg"
           alt="bulles 1"
+          width="50"
+          height="100"
         />
-        <!--SVG Bulles 2-->
+
         <img
           class="bulles2"
           src="./img/img_elements_visuels/bulles-2.svg"
           alt="bulles 2"
+          width="50"
+          height="100"
         />
+
         <div class="sousmarinbleu sprite1"></div>
       </section>
-
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------- Chapitre 4 ------------------------------------------------------------------>
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre4" class="chapitre4">
         <ul class="technique-gsap">
           <li>
@@ -208,19 +205,23 @@
           class="poissonrouge"
           src="./img/img_personnages/poisson_rouge.png"
           alt="poissonrouge"
+          width="300"
+          height="150"
         />
+
         <img
           class="monstreimg"
           src="./img/img_personnages/monstre_sous_marin.png"
           alt="monstre"
+          width="400"
+          height="200"
         />
-        <div class="sousmarinbleu2 sprite2"></div>
+
+        <div
+          class="sousmarinbleu2 sprite2"
+          style="width: 300px; height: 300px"
+        ></div>
       </section>
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------- Chapitre 5 ------------------------------------------------------------------>
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre5" class="chapitre5">
         <ul class="technique-gsap">
           <li>
@@ -248,9 +249,9 @@
           class="tresorimg"
           src="./img/img_elements_visuels/tresor2.png"
           alt="tresor"
+          width="250"
+          height="125"
         />
-
-        <!-- Morph SVG -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360">
           <path
             class="cle"
@@ -263,37 +264,37 @@
             id="cadenas"
             d="M251.6,148.32H75.88c-.18-.3-.29-.62-.48-.92l-12.21-18.93h0c-18.29-28.36-9.42-65.87,19.78-83.65,14.14-8.6,30.9-11.37,47.18-7.72,16.26,3.61,30.11,13.18,38.97,26.9,0,.01.02.02.02.02l21.77,33.72c3.47,5.37,9.42,8.32,15.5,8.32,3.33,0,6.69-.87,9.7-2.71,8.56-5.2,11.14-16.17,5.79-24.48l-21.78-33.72s-.03-.05-.06-.08c-14.05-21.73-35.97-36.86-61.74-42.61-25.8-5.73-52.35-1.39-74.78,12.26C17.24,42.88,3.17,102.37,32.19,147.32h0s.64,1,.64,1h-14.54c-10.11,0-18.29,7.95-18.29,17.75v176.18c0,9.81,8.18,17.75,18.29,17.75h233.3c10.09,0,18.29-7.95,18.29-17.75v-176.17c.01-9.81-8.19-17.75-18.28-17.75Z"
             fill="#d8b712"
-          />
-        </svg>
-
-        <!--Parallax-->
-        <img
+          /></svg
+        ><img
           class="plaineavant"
           src="./img/img_arriere_plan/chapitre_5/arriere-plan-chp5-4.png"
           alt="Plaine avant"
+          width="1200"
+          height="600"
         />
         <img
           class="plainearriere"
           src="./img/img_arriere_plan/chapitre_5/arriere-plan-chp5-3.png"
           alt="Plaine arriere"
+          width="800"
+          height="400"
         />
         <img
           class="plainearriere2"
           src="./img/img_arriere_plan/chapitre_5/arriere-plan-chp5-6.png"
           alt="Plaine arriere-2"
+          width="600"
+          height="300"
         />
 
         <img
           class="rochesavant"
           src="./img/img_arriere_plan/chapitre_5/arriere-plan-chp5-5.png"
           alt="roches avant"
+          width="400"
+          height="200"
         />
       </section>
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------- Chapitre 6------------------------------------------------------------------>
-      <!----------------------------------------------------------------------------------------------------------------------------->
-      <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre6" class="chapitre6">
         <ul class="technique-gsap" display="none">
           <li>
@@ -315,7 +316,6 @@
         </ul>
         <h2 class="titre fin6">Félicitations!</h2>
         <h4 class="description tache6">Tu as recupéré la pièce magique.</h4>
-        <!--DRAW SVG-->
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <path
             class="etoile"
@@ -326,9 +326,7 @@
             stroke-width="2"
           />
         </svg>
-        <!-- Conteneur pour MOTIONPATH -->
         <div class="animation-container">
-          <!-- SVG de la pièce de monnaie -->
           <svg
             id="Calque_1"
             data-name="Calque 1"
@@ -340,9 +338,8 @@
               <style>
                 .cls-1 {
                   fill: #d6bd2b;
-                  stroke-width: 0px;
+                  stroke-width: 0;
                 }
-
                 .cls-2 {
                   fill: #d3d1cf;
                   font-family: Poppins-Bold, Poppins;
@@ -364,30 +361,32 @@
             <text />
           </svg>
         </div>
-        <!--SpriteSheet Tentacules-->
         <div class="tentacules sprite2"></div>
       </section>
     </main>
-    <!----------------------------------------------------------------------------------------------------------------------------->
-    <!----------------------------------------------------------------------------------------------------------------------------->
-    <!----------------------------------------------- FOOTER ------------------------------------------------------------------>
-    <!----------------------------------------------------------------------------------------------------------------------------->
-    <!----------------------------------------------------------------------------------------------------------------------------->
     <footer>
       <p class="credits">
         Projet scrollytelling créé dans le cadre du cours Optimisation Web
-        Intégration multimédia - Collège Montmorency. © 2024 - Conception :
-        <br />
-        Ikrame Rata et Jeremy Duverseau | Développement Web : Ikrame Rata.
+        Intégration multimédia - Collège Montmorency. © 2024 - Conception :<br />Ikrame
+        Rata et Jeremy Duverseau | Développement Web : Ikrame Rata.
       </p>
     </footer>
-    <!---------------------------------------Section FOOTER FIN ----------------------------------------------------->
-
-    <!-- Les scripts de GSAP pour les animations -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MotionPathPlugin.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js"></script>
-    <script src="./script/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script
+      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MotionPathPlugin.min.js"
+      defer
+    ></script>
+    <script
+      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js"
+      defer
+    ></script>
+    <script src="./script/script.js" defer></script>
   </body>
 </html>

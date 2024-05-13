@@ -1,5 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 
+body,
+main {
+  width: 100vw;
+}
+header,
+section {
+  background-position: center;
+  width: 100%;
+}
+.titre,
+.titreHistoire {
+  color: var(--off-white);
+}
+.titre,
+h1,
+header,
+section {
+  width: 100%;
+}
+.titreHistoire,
+h1 {
+  position: absolute;
+  text-align: center;
+  font-size: 4vw;
+}
+img {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+#defilezbtn,
+.titreHistoire {
+  left: 50%;
+  transform: translateX(-50%);
+}
+#chapitre1,
+header,
+section {
+  position: relative;
+  background-size: cover;
+  height: 100vh;
+}
+#chapitre1,
+header,
+main,
+section {
+  height: 100vh;
+}
+.sousmarinbleu,
+.sousmarinbleu2 {
+  background-size: 100% 4800%;
+  background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
+  animation: 2s steps(48) infinite sousmarinplay;
+  aspect-ratio: 1/1;
+}
 :root {
   --bleu-pale: #36a9e0;
   --rose: #e65774;
@@ -9,35 +65,23 @@
   --rose-deux: #d552a0;
   --off-white: #fffff2;
 }
-/*---------------------------------------------------------------------------------------------------------------------*/
-/*--------------------------------------------- HEADER -------------------------------------------------------*/
-/*---------------------------------------------------------------------------------------------------------------------*/
 header {
-  width: 100%;
-  height: 100vh;
   background-image: url("../img/arriere-plan-principal.png");
-  background-size: cover;
-  background-position: center;
-  position: relative;
 }
-/*---------------------------------------------------------------------------------------------------------------------*/
-/*--------------------------------------------- STYLES GLOBALES -------------------------------------------------------*/
-/*---------------------------------------------------------------------------------------------------------------------*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 ul.technique-gsap {
   background: rgba(0, 0, 0, 0.3);
-  color: white;
+  color: #fff;
   font-size: 10px;
   font-family: monospace;
   font-weight: 400;
   width: auto;
   display: inline-block;
-  padding: 10px 20px 12px 20px;
+  padding: 10px 20px 12px;
   margin: 0;
   max-width: 300px;
   position: absolute;
@@ -45,92 +89,61 @@ ul.technique-gsap {
   top: 0;
   left: 0;
 }
-
 ul.technique-gsap li {
   margin: 5px 0;
 }
-
 body {
-  width: 100vw;
   overflow-x: hidden;
-  font-family: "Oswald";
+  font-family: Oswald;
 }
-
 main {
   overflow-y: visible;
-  height: 100vh;
-  width: 100vw;
 }
-
 section {
   overflow-y: scroll;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
 }
-
 .titreHistoire {
-  position: absolute;
   top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 4vw;
-  color: var(--off-white);
-  text-align: center;
 }
-
 .titre {
   font-size: 2.5rem;
-  color: var(--off-white);
   text-align: center;
   margin-top: 5vh;
   margin-bottom: 20px;
-  width: 100%;
   position: absolute;
   top: 20;
   left: 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
-
 h1 {
-  position: absolute;
   top: 5vh;
   padding: 0 20px;
-  text-align: center;
-  width: 100%;
-  font-size: 4vw;
   color: var(--off-white);
 }
-
-.histoire /*titre description */ {
+.histoire,
+h4 {
+  font-size: 2rem;
   position: absolute;
+  color: var(--off-white);
   text-align: center;
+}
+.histoire {
   left: 25vw;
   padding-bottom: 5vh;
   width: 100vw;
-  font-size: 2rem;
-  color: var(--off-white);
 }
-
 h4 {
-  position: absolute;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30vw;
-  text-align: center;
-  font-size: 2rem;
-  color: var(--off-white);
-  font-weight: normal;
+  font-weight: 400;
   padding: 10px;
   border-radius: 8px;
-  transition: all 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   z-index: 1;
   background-color: rgb(22, 71, 117, 0.5);
 }
-
 @media screen and (max-width: 768px) {
   h2,
   h3,
@@ -138,56 +151,39 @@ h4 {
     font-size: 1rem;
     padding: 8px;
   }
-}
-
-@media screen and (max-width: 768px) {
   h1 {
     font-size: 3vw;
   }
 }
-
 .description {
   position: absolute;
   width: 50vw;
   top: 50vh;
 }
-
 #defilezbtn {
   position: absolute;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
 }
-
 #defilezbtn span {
   margin-left: 5px;
   font-size: 30px;
   color: var(--off-white);
 }
-
-/*--------------------------------------------- Section pour chapitres -------------------------------------------------------*/
-/*----------------------------------------------------------------------------------------------*/
-/*--------------------------------------------- Chapitre 1 ------------------------------------*/
-/*----------------------------------------------------------------------------------------------*/
 #chapitre1 {
-  position: relative;
   background-image: url("../img/img_arriere_plan/chapitre_1/arriere-plan-chp1.png");
-  background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
 }
 
 .sousmarinrouge {
   position: absolute;
   left: 0;
   top: 30vh;
-  width: 50vmax;
+  max-width: 50vmax;
   height: auto;
   z-index: 3;
 }
-
 .poissoncolore {
   position: absolute;
   right: 0;
@@ -195,7 +191,6 @@ h4 {
   width: 20vmin;
   height: auto;
 }
-
 .groupepoisson {
   position: absolute;
   right: 0;
@@ -204,7 +199,6 @@ h4 {
   height: auto;
   z-index: 7;
 }
-
 .bleudevant1 {
   position: absolute;
   width: 100vmax;
@@ -213,7 +207,6 @@ h4 {
   right: 0;
   z-index: 4;
 }
-
 .bleuarriere1 {
   position: absolute;
   width: 40vmax;
@@ -222,7 +215,6 @@ h4 {
   left: 0;
   z-index: 0;
 }
-
 .bleuarriere2 {
   position: absolute;
   width: 50vmax;
@@ -231,69 +223,51 @@ h4 {
   right: 0;
   z-index: -1;
 }
-
-/*----------------------------------------------------------------------------------------------*/
-/*--------------------------------------------- Chapitre 2 ------------------------------------*/
-/*----------------------------------------------------------------------------------------------*/
+.jumellesimg,
+.medusebleuimg,
+.meduseroseimg,
+.sousmarinbleu {
+  height: auto;
+  position: absolute;
+}
 #chapitre2 {
   background-image: url("../img/img_arriere_plan/chapitre_2/arriere-plan-chp2.png");
 }
 .jumellesimg {
-  position: absolute;
   top: 10vh;
   left: 30vmax;
   width: 50vmin;
-  height: auto;
 }
-
 .medusebleuimg {
-  position: absolute;
   right: 12vw;
   bottom: 10vh;
   width: 20vmin;
-  height: auto;
 }
-
 .meduseroseimg {
-  position: absolute;
   left: 20vw;
   top: 50vh;
   width: 15vmin;
-  height: auto;
 }
-/*----------------------------------------------------------------------------------------------*/
-/*--------------------------------------------- Chapitre 3 -------------------------------------*/
-/*----------------------------------------------------------------------------------------------*/
 #chapitre3 {
   background-image: url("../img/img_arriere_plan/chapitre_3/arriere-plan-chp3.png");
 }
-
 .bulles1 {
   position: absolute;
   top: 10vh;
 }
-
 .bulles2 {
   position: absolute;
   top: 20vh;
 }
-
 .sousmarinbleu {
-  position: absolute;
   bottom: 20vh;
   left: 0;
   width: 50vmin;
-  height: auto;
-  aspect-ratio: 1/1;
-  background-size: 100% 4800%;
-  background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
-  animation: sousmarinplay 2s steps(48) infinite;
 }
-
-body.is-scrolling .sprite1.sprite2 {
+body.is-scrolling .sprite1.sprite2,
+body.is-scrolling .sprite2 {
   animation-play-state: running;
 }
-
 @keyframes sousmarinplay {
   from {
     background-position: -4800% 0;
@@ -302,19 +276,9 @@ body.is-scrolling .sprite1.sprite2 {
     background-position: 0 -4800%;
   }
 }
-
-/*----------------------------------------------------------------------------------------------*/
-/*--------------------------------------------- Chapitre 4 ------------------------------------*/
-/*----------------------------------------------------------------------------------------------*/
 #chapitre4 {
   background-image: url("../img/img_arriere_plan/chapitre_4/arriere-plan-chp4.png");
 }
-
-svg {
-  width: 100vw;
-  height: auto;
-}
-
 .poissonrouge {
   position: absolute;
   width: 30vmin;
@@ -322,43 +286,32 @@ svg {
   right: 0;
   top: 25vh;
 }
-
-.monstreimg {
+.monstreimg,
+.sousmarinbleu2,
+.tresorimg {
+  height: auto;
   position: absolute;
+}
+.monstreimg {
   bottom: 8vh;
   left: 35vw;
   width: 40vmin;
-  height: auto;
 }
-
 .sousmarinbleu2 {
-  position: absolute;
   top: 20vh;
   right: 0;
   width: 30vmin;
-  height: auto;
-  aspect-ratio: 1/1;
-  background-size: 100% 4800%;
-  background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
   transform: scaleX(-1);
-  animation: sousmarinplay 2s steps(48) infinite;
 }
-/*----------------------------------------------------------------------------------------------*/
-/*--------------------------------------------- Chapitre 5 ------------------------------------*/
-/*----------------------------------------------------------------------------------------------*/
 section#chapitre5 {
   background-image: url("../img/img_arriere_plan/chapitre_5/arriere-plan-chp5.png");
 }
-
 .tresorimg {
-  position: absolute;
   bottom: 8vh;
   left: 0;
   width: 27vmin;
-  height: auto;
   z-index: 4;
 }
-
 .plaineavant {
   position: absolute;
   width: 100vmax;
@@ -366,31 +319,30 @@ section#chapitre5 {
   right: 0;
   z-index: 2;
 }
-
-.plainearriere {
-  position: absolute;
-  width: 50vmax;
-  bottom: 5vh;
-  left: 0;
-  z-index: 0;
-}
-
+.plainearriere,
 .plainearriere2 {
   position: absolute;
-  width: 40vmax;
   bottom: 5vh;
-  right: 0;
   z-index: 0;
 }
-
-.rochesavant {
+.plainearriere {
+  width: 50vmax;
+  left: 0;
+}
+.plainearriere2 {
+  width: 40vmax;
+  right: 0;
+}
+.rochesavant,
+.texte-voix1 {
+  z-index: 3;
   position: absolute;
+}
+.rochesavant {
   width: 50vmax;
   bottom: 10vh;
   left: 25vw;
-  z-index: 3;
 }
-
 svg {
   position: absolute;
   width: 50vw;
@@ -401,50 +353,43 @@ svg {
 #cadenas {
   visibility: hidden;
 }
-
 .texte-voix1 {
-  position: absolute;
   color: var(--off-white);
   font-size: 6vw;
   top: 30vh;
   left: 45vw;
   opacity: 0;
-  z-index: 3;
 }
-
 .overlay-1 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: #000;
   opacity: 0;
   z-index: 10;
 }
-
-/*----------------------------------------------------------------------------------------------*/
-/*--------------------------------------------- Chapitre 6 ------------------------------------*/
-/*----------------------------------------------------------------------------------------------*/
+.animation-trace,
+.credits {
+  top: 50%;
+  position: absolute;
+}
 #chapitre6 {
   background-image: url("../img/img_arriere_plan/chapitre_6/arriere-plan-chp6.png");
 }
-
 #etoile-svg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 50%);
 }
-
 .animation-container {
   position: relative;
   width: 100%;
-  height: 500px; /* Ajustez la hauteur selon vos besoins */
+  height: 500px;
 }
 .animation-trace {
-  position: absolute;
-  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -458,30 +403,18 @@ svg {
   aspect-ratio: 1/1;
   background-size: 4800% 100%;
   background-image: url("../img/spritesheets/spritesheet_tentacules.png");
-  animation: playSprite 2s steps(48) infinite;
+  animation: 2s steps(48) infinite playSprite;
   margin: 0 auto;
 }
-
-body.is-scrolling .sprite2 {
-  animation-play-state: running;
-}
-
 @keyframes playSprite {
   from {
     background-position: 0 100%;
   }
   to {
-    background-position: -4800% 100%; /* Déplace verticalement le fond pour montrer chaque frame */
+    background-position: -4800% 100%;
   }
 }
-
-/*--------------------------------------------- SECTION FIN -------------------------------------------------------*/
-/*--------------------------------------------- SECTION FIN-------------------------------------------------------*/
-/*--------------------------------------------- SECTION FIN -------------------------------------------------------*/
-/*--------------------------------------------- FOOTER -------------------------------------------------------*/
-
 .credits {
-  position: absolute;
   color: var(--bleu-fonce);
   font-weight: light;
   width: 70vw;
@@ -490,7 +423,6 @@ body.is-scrolling .sprite2 {
   padding: 2vh;
   font-size: 0.9rem;
   text-align: center;
-  top: 50%;
   left: 50%;
   margin-top: 10vmin;
   transform: translate(-50%, 100%);

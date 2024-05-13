@@ -145,18 +145,17 @@ chapitre5
     0
   )
   .to(".plaineavant", { scale: 1.2, ease: "slow", duration: 5 }, 0)
-  .to(".rochesavant", { ease: "slow", scale: 1.2, duration: 5 }, 0);
-//MORPH SVG
-gsap
-  .timeline()
-  .to("#cle1", {
-    duration: 1,
-    ease: "power1.inOut",
-    morphSVG: "#cadenas1 > path",
-  })
+  .to(".rochesavant", { ease: "slow", scale: 1.2, duration: 5 }, 0)
+  //MORPH SVG
   .to(".tresorimg", { x: "50vw", duration: 5 })
   .to(".tresorimg", { y: "70vh", duration: 2, ease: "power1.inOut" })
   .to(".tresorimg", { rotation: 90, duration: 1, ease: "power1.inOut" });
+gsap.timeline().to("#cle1", {
+  duration: 1,
+  ease: "power1.inOut",
+  morphSVG: "#cadenas1 > path",
+});
+
 const chapitre6 = gsap.timeline({
   scrollTrigger: {
     trigger: ".animation-container",

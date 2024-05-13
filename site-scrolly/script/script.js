@@ -165,8 +165,7 @@ const chapitre6 = gsap.timeline({
     scrub: 1,
   },
 });
-chapitre6;
-gsap
+chapitre6
   .to("#etoile-svg", {
     duration: 2,
     drawSVG: "50% 100%",

@@ -8,18 +8,15 @@
 Problème à résoudre : Certaines ressources bloquent la première visualisation (first paint) de votre page, ralentissant ainsi le chargement initial.
 
 Action concrète pour résoudre le problème :
-Utiliser des outils de minification et de concaténation pour réduire la taille des fichiers CSS et JavaScript.
-Déplacer les scripts non essentiels vers la fin du chargement de la page ou les charger de manière asynchrone.
-Utiliser des CDN pour les ressources statiques afin de bénéficier de la mise en cache et d'une livraison plus rapide.
-
+Utiliser des outils de minification en ligne et de concaténation pour réduire la taille des fichiers CSS et JavaScript.
+Charger les scripts de manière asynchrone.
 
 ### Problème #2
 Les éléments d'image ne possèdent pas de width ni de height explicites
-Problème à résoudre : L'absence de dimensions explicites sur les éléments d'image peut entraîner des décalages de mise en page (CLS) lors du chargement de la page.
+Problème à résoudre : L'absence de dimensions explicites sur les éléments d'image peut entraîner des décalages de mise en page lors du chargement de la page.
 
 Action concrète pour résoudre le problème :
 Ajouter des attributs width et height aux balises d'image en utilisant des valeurs proches de la taille réelle de l'image.
-Utiliser des outils en ligne ou des éditeurs d'image pour redimensionner les images et obtenir les dimensions souhaitées.
 Vérifier et mettre à jour le code HTML pour inclure les dimensions explicites sur chaque balise d'image.
 
 ### Problème #3

@@ -77,6 +77,7 @@ ul.technique-gsap {
 }
 ul.technique-gsap li {
   margin: 5px 0;
+  display: none;
 }
 body {
   overflow-x: hidden;

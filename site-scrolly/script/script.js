@@ -2,8 +2,8 @@
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(MotionPathPlugin);
 // Plugins GSAP payants
-//gsap.registerPlugin(DrawSVGPlugin);
-//gsap.registerPlugin(MorphSVGPlugin);
+gsap.registerPlugin(DrawSVGPlugin);
+gsap.registerPlugin(MorphSVGPlugin);
 
 let e;
 window.addEventListener("scroll", function () {

@@ -183,7 +183,7 @@ chapitre4.fromTo(
 gsap.fromTo(
   ".poissonrouge",
   { x: "100vw" },
-  { x: "-100vw", duration: 10, ease: "power1.inOut", repeat: -1 }
+  { x: "-100vw", duration: 9, ease: "power1.inOut", repeat: -1 }
 );
 
 gsap.fromTo(
@@ -222,11 +222,12 @@ chapitre5
   )
   .to(".plaineavant", { scale: 1.2, ease: "slow", duration: 5 }, 0)
   .to(".rochesavant", { ease: "slow", scale: 1.2, duration: 5 }, 0)
-  /*.to(".cle", {
+  //MORPH SVG
+  /* .to(".cle", {
     duration: 3,
     ease: "power1.inOut",
     morphSVG: ".cadenas",
-  }) */
+  })*/
   .to(".tresorimg", { x: "50vw", duration: 5 }) // Déplacement horizontal initial du trésor
   .to(".tresorimg", { y: "70vh", duration: 2, ease: "power1.inOut" }) // Chute vers le bas
   .to(".tresorimg", { rotation: 90, duration: 1, ease: "power1.inOut" });
@@ -236,7 +237,12 @@ chapitre5
 // CHAPITRE 6
 // ----------
 // ----------
-
+// Anime le tracé SVG pour le dessiner progressivement
+/*const draw = new DrawSVG("#vague-svg");
+draw.draw("0%", "100%", {
+  duration: 2000,
+  easing: "linear",
+});*/
 const chapitre6 = gsap.timeline({
   scrollTrigger: {
     trigger: ".animation-container",

@@ -28,13 +28,20 @@
       <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre1" class="chapitre1">
         <ul class="technique-gsap">
-          <li>...</li>
-          <li>...</li>
+          <li>
+            Animation de base
+            <ul>
+              <li>Sous-marin rouge - Translation et Rotation</li>
+              <li>Poisson coloré - Translation</li>
+              <li>Groupe de poissons - Translation</li>
+              <li>Arrière-plan - Translation et scale</li>
+            </ul>
+          </li>
           <li>
             scrollTrigger
             <ul>
-              <li>trigger=</li>
-              <li>...</li>
+              <li>trigger = #chapitre1</li>
+              <li>Arrière-plan - Parallax</li>
             </ul>
           </li>
         </ul>
@@ -84,13 +91,19 @@
       <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre2" class="chapitre2">
         <ul class="technique-gsap">
-          <li>...</li>
-          <li>...</li>
+          <li>
+            Animation de base
+            <ul>
+              <li>Méduse bleue - Translation</li>
+              <li>Méduse rose - Translation</li>
+              <li>Jumelles - Translation et Rotation</li>
+            </ul>
+          </li>
           <li>
             scrollTrigger
             <ul>
-              <li>trigger=</li>
-              <li>...</li>
+              <li>trigger = #chapitre2</li>
+              <li>Jumelles - Animation des images de fond</li>
             </ul>
           </li>
         </ul>
@@ -123,13 +136,19 @@
       <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre3" class="chapitre3">
         <ul class="technique-gsap">
-          <li>...</li>
-          <li>...</li>
+          <li>
+            Animation de base
+            <ul>
+              <li>Bulles 1 - Translation</li>
+              <li>Bulles 2 - Translation</li>
+              <li>Sous-marin bleu - Translation</li>
+            </ul>
+          </li>
           <li>
             scrollTrigger
             <ul>
-              <li>trigger=</li>
-              <li>...</li>
+              <li>trigger = #chapitre3</li>
+              <li>Sous-marin bleu - Translation</li>
             </ul>
           </li>
         </ul>
@@ -161,13 +180,21 @@
       <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre4" class="chapitre4">
         <ul class="technique-gsap">
-          <li>...</li>
-          <li>...</li>
+          <li>
+            Animation de base
+            <ul>
+              <li>Monstre - Translation</li>
+              <li>Poisson rouge - Translation</li>
+              <li>Sous-marin bleu 2 - Translation</li>
+            </ul>
+          </li>
           <li>
             scrollTrigger
             <ul>
-              <li>trigger=</li>
-              <li>...</li>
+              <li>trigger = #chapitre4</li>
+              <li>Monstre - Translation</li>
+              <li>Poisson rouge - Translation</li>
+              <li>Sous-marin bleu 2 - Translation</li>
             </ul>
           </li>
         </ul>
@@ -196,13 +223,19 @@
       <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre5" class="chapitre5">
         <ul class="technique-gsap">
-          <li>...</li>
-          <li>...</li>
+          <li>
+            Animation de base
+            <ul>
+              <li>Arrière-plan - Translation et scale</li>
+              <li>Trésor - Translation et Rotation</li>
+            </ul>
+          </li>
           <li>
             scrollTrigger
             <ul>
-              <li>trigger=</li>
-              <li>...</li>
+              <li>trigger = #chapitre5</li>
+              <li>Arrière-plan - Translation et scale</li>
+              <li>Trésor - Translation et Rotation</li>
             </ul>
           </li>
         </ul>
@@ -255,8 +288,6 @@
           src="./img/img_arriere_plan/chapitre_5/arriere-plan-chp5-5.png"
           alt="roches avant"
         />
-        <div class="overlay-1"></div>
-        <h2 class="texte-1">As tu reussi? ...</h2>
       </section>
       <!----------------------------------------------------------------------------------------------------------------------------->
       <!----------------------------------------------------------------------------------------------------------------------------->
@@ -265,19 +296,36 @@
       <!----------------------------------------------------------------------------------------------------------------------------->
       <section id="chapitre6" class="chapitre6">
         <ul class="technique-gsap">
-          <li>...</li>
-          <li>...</li>
+          <li>
+            Animation de base
+            <ul>
+              <li>Fin6 - Translation verticale</li>
+              <li>Trace de l'animation - Translation et mise à l'échelle</li>
+              <li>Tentacules - Translation verticale</li>
+            </ul>
+          </li>
           <li>
             scrollTrigger
             <ul>
-              <li>trigger=</li>
-              <li>...</li>
+              <li>trigger = .animation-container</li>
+              <li>Trace de l'animation - Translation et mise à l'échelle</li>
+              <li>Tentacules - Translation verticale</li>
             </ul>
           </li>
         </ul>
-        <h2 class="titre 6">Félicitations!</h2>
+        <h2 class="titre fin6">Félicitations!</h2>
         <h4 class="description tache6">Tu as recupéré la pièce magique.</h4>
-
+        <!--DRAW SVG-->
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path
+            class="etoile"
+            id="etoile-svg"
+            d="M 50,5 L 60,30 L 95,35 L 65,50 L 75,75 L 50,60 L 25,75 L 35,50 L 5,35 L 40,30 Z"
+            fill="none"
+            stroke="#d8b712"
+            stroke-width="2"
+          />
+        </svg>
         <!-- Conteneur pour MOTIONPATH -->
         <div class="animation-container">
           <!-- SVG de la pièce de monnaie -->

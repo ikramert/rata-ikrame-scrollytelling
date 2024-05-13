@@ -27,3 +27,14 @@ Action concrète pour résoudre le problème :
 Convertir les images existantes en formats modernes comme WebP en utilisant des outils en ligne gratuits ou des plugins pour les éditeurs d'image.
 Mettre à jour le code HTML pour référencer les nouvelles versions des images au format WebP.
 Tester la compatibilité des navigateurs et fournir une alternative pour ceux qui ne prennent pas en charge les formats d'image modernes.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Rapport projet ScrollyTelling après optimisation
+
+[Page Speed Insights - Rapport du 13 mai 2024, 05:10:31](https://pagespeed.web.dev/analysis/https-ikrame-tim-momo-com/wlrkcty0p3?form_factor=desktop)
+
+

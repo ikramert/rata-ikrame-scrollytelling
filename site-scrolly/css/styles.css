@@ -286,6 +286,7 @@ h4 {
     background-position: 0 -4800%;
   }
 }
+
 section#chapitre5 {
   background-image: url("../img/img_arriere_plan/chapitre_5/arriere-plan-chp5.png");
 }
@@ -328,16 +329,21 @@ section#chapitre5 {
   bottom: 10vh;
   left: 25vw;
 }
-svg {
+
+.morphing {
   position: absolute;
-  width: 50vw;
-  height: 50vh;
-  top: 0;
-  left: 35vw;
+  top: 20vh;
+  left: 40vw;
+  height: auto;
 }
-#cadenas {
-  visibility: hidden;
+
+.drawsvg {
+  position: absolute;
+  top: 30vh;
+  right: 20vw;
+  height: auto;
 }
+
 .texte-voix1 {
   color: var(--off-white);
   font-size: 6vw;
@@ -362,12 +368,6 @@ svg {
 }
 #chapitre6 {
   background-image: url("../img/img_arriere_plan/chapitre_6/arriere-plan-chp6.png");
-}
-#etoile-svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 50%);
 }
 .animation-container {
   position: relative;

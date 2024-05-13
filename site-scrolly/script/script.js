@@ -146,7 +146,15 @@ chapitre5
     0
   )
   .to(".plaineavant", { scale: 1.2, ease: "slow", duration: 5 }, 0)
-  .to(".rochesavant", { ease: "slow", scale: 1.2, duration: 5 }, 0)
+  .to(".rochesavant", { ease: "slow", scale: 1.2, duration: 5 }, 0);
+//MORPH SVG
+gsap
+  .timeline()
+  .to("#cle1", {
+    duration: 1,
+    ease: "power1.inOut",
+    morphSVG: "#cadenas1 > path",
+  })
   .to(".tresorimg", { x: "50vw", duration: 5 })
   .to(".tresorimg", { y: "70vh", duration: 2, ease: "power1.inOut" })
   .to(".tresorimg", { rotation: 90, duration: 1, ease: "power1.inOut" });
@@ -158,7 +166,13 @@ const chapitre6 = gsap.timeline({
     scrub: 1,
   },
 });
-chapitre6
+chapitre6;
+gsap
+  .to("#etoile-svg", {
+    duration: 2,
+    drawSVG: "50% 100%",
+    ease: "power1.out",
+  })
   .to(".animation-trace", {
     motionPath: {
       path: "M 20 20 C 40 120, 160 120, 200 20 C 240 -80, 360 -80, 400 20",

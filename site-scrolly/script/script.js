@@ -2,12 +2,10 @@
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(MotionPathPlugin);
 
-// Payants
-/*
+/*// Payants
 gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(MorphSVGPlugin);
 */
-
 // ----------
 // ----------
 // HEADER

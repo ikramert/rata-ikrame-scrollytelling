@@ -1,17 +1,23 @@
-gsap.registerPlugin(ScrollTrigger),
-  gsap.to("#defilezbtn img, span", {
-    y: 10,
-    duration: 0.5,
-    ease: "power1.inOut",
-    repeat: -1,
-    yoyo: !0,
-  }),
-  window.addEventListener("scroll", function () {
-    document.body.classList.add("is-scrolling"), clearTimeout(e);
-    let e = setTimeout(function () {
-      document.body.classList.remove("is-scrolling");
-    }, 100);
-  });
+gsap.registerPlugin(ScrollTrigger);
+
+let e;
+
+window.addEventListener("scroll", function () {
+  document.body.classList.add("is-scrolling");
+  clearTimeout(e);
+  e = setTimeout(function () {
+    document.body.classList.remove("is-scrolling");
+  }, 100);
+});
+
+gsap.to("#defilezbtn img, span", {
+  y: 10,
+  duration: 0.5,
+  ease: "power1.inOut",
+  repeat: -1,
+  yoyo: !0,
+});
+
 const chapitre1 = gsap.timeline({
   scrollTrigger: {
     trigger: "#chapitre1",
@@ -130,11 +136,7 @@ const chapitre5 = gsap.timeline({
   },
 });
 chapitre5
-  .to(
-    ".plainearriere",
-    { y: "-10vh", scale: 1.8, ease: "slow", duration: 5 },
-    0
-  )
+  .to(".plainearriere", { y: "-6vh", scale: 1.8, ease: "slow", duration: 5 }, 0)
   .to(
     ".plainearriere2",
     { y: "-3vh", scale: 1.2, ease: "slow", duration: 5 },

@@ -1,5 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
-
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap);
+.titre,
+h1,
+header,
+img,
+section {
+  width: 100%;
+}
+.credits,
+.histoire,
+.titre,
+.titreHistoire,
+h1,
+h4 {
+  text-align: center;
+}
 body,
 main {
   width: 100vw;
@@ -7,41 +21,36 @@ main {
 header,
 section {
   background-position: center;
-  width: 100%;
 }
 .titre,
 .titreHistoire {
   color: var(--off-white);
 }
-.titre,
-h1,
-header,
-section {
-  width: 100%;
-}
 .titreHistoire,
 h1 {
   position: absolute;
-  text-align: center;
   font-size: 4vw;
 }
 img {
   height: auto;
-  width: 100%;
   max-width: 100%;
 }
-
 #defilezbtn,
 .titreHistoire {
+  max-width: 50vw;
   left: 50%;
   transform: translateX(-50%);
+}
+.titre,
+ul.technique-gsap {
+  left: 0;
+  position: absolute;
 }
 #chapitre1,
 header,
 section {
   position: relative;
   background-size: cover;
-  height: 100vh;
 }
 #chapitre1,
 header,
@@ -49,11 +58,17 @@ main,
 section {
   height: 100vh;
 }
-.sousmarinbleu,
+.sousmarinbleu {
+  background-image: url("../img/img_elements_visuels/sous_marin2.png");
+  background-repeat: no-repeat;
+  top: 40vh;
+  left: 10vh;
+}
+
 .sousmarinbleu2 {
-  background-size: 100% 4800%;
+  background-size: 100% 1200%;
   background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
-  animation: 2s steps(48) infinite sousmarinplay;
+  animation: 6s steps(12) infinite sousmarinplay;
   aspect-ratio: 1/1;
 }
 :root {
@@ -84,10 +99,8 @@ ul.technique-gsap {
   padding: 10px 20px 12px;
   margin: 0;
   max-width: 300px;
-  position: absolute;
   z-index: 1000;
   top: 0;
-  left: 0;
 }
 ul.technique-gsap li {
   margin: 5px 0;
@@ -107,13 +120,16 @@ section {
 }
 .titre {
   font-size: 2.5rem;
-  text-align: center;
   margin-top: 5vh;
   margin-bottom: 20px;
-  position: absolute;
   top: 20;
-  left: 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+#defilezbtn span,
+.histoire,
+h4 {
+  font-size: 2rem;
+  color: var(--off-white);
 }
 h1 {
   top: 5vh;
@@ -122,15 +138,17 @@ h1 {
 }
 .histoire,
 h4 {
-  font-size: 2rem;
   position: absolute;
-  color: var(--off-white);
-  text-align: center;
 }
 .histoire {
   left: 25vw;
   padding-bottom: 5vh;
   width: 100vw;
+}
+.description,
+svg {
+  width: 50vw;
+  position: absolute;
 }
 h4 {
   top: 35%;
@@ -156,26 +174,21 @@ h4 {
   }
 }
 .description {
-  position: absolute;
-  width: 50vw;
   top: 50vh;
 }
 #defilezbtn {
   position: absolute;
-  bottom: 20px;
+  bottom: 2vh;
   display: flex;
   align-items: center;
 }
 #defilezbtn span {
-  margin-left: 5px;
-  font-size: 30px;
-  color: var(--off-white);
+  margin-left: 1vw;
 }
 #chapitre1 {
   background-image: url("../img/img_arriere_plan/chapitre_1/arriere-plan-chp1.png");
   background-repeat: no-repeat;
 }
-
 .sousmarinrouge {
   position: absolute;
   left: 0;
@@ -226,7 +239,10 @@ h4 {
 .jumellesimg,
 .medusebleuimg,
 .meduseroseimg,
-.sousmarinbleu {
+.monstreimg,
+.sousmarinbleu,
+.sousmarinbleu2,
+.tresorimg {
   height: auto;
   position: absolute;
 }
@@ -270,10 +286,10 @@ body.is-scrolling .sprite2 {
 }
 @keyframes sousmarinplay {
   from {
-    background-position: -4800% 0;
+    background-position: -1200% 0;
   }
   to {
-    background-position: 0 -4800%;
+    background-position: 0 -1200%;
   }
 }
 #chapitre4 {
@@ -285,12 +301,6 @@ body.is-scrolling .sprite2 {
   height: 15vmin;
   right: 0;
   top: 25vh;
-}
-.monstreimg,
-.sousmarinbleu2,
-.tresorimg {
-  height: auto;
-  position: absolute;
 }
 .monstreimg {
   bottom: 8vh;
@@ -344,8 +354,6 @@ section#chapitre5 {
   left: 25vw;
 }
 svg {
-  position: absolute;
-  width: 50vw;
   height: 50vh;
   top: 0;
   left: 35vw;
@@ -353,37 +361,10 @@ svg {
 #cadenas {
   visibility: hidden;
 }
-.texte-voix1 {
-  color: var(--off-white);
-  font-size: 6vw;
-  top: 30vh;
-  left: 45vw;
-  opacity: 0;
-}
-.overlay-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-  opacity: 0;
-  z-index: 10;
-}
-.animation-trace,
-.credits {
-  top: 50%;
-  position: absolute;
-}
 #chapitre6 {
   background-image: url("../img/img_arriere_plan/chapitre_6/arriere-plan-chp6.png");
 }
-#etoile-svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
+
 .animation-container {
   position: relative;
   width: 100%;
@@ -393,25 +374,25 @@ svg {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.tentacules {
+tentacules {
   position: absolute;
   bottom: 35vh;
   left: 30vw;
   width: 50vmin;
   height: 50vmin;
   aspect-ratio: 1/1;
-  background-size: 4800% 100%;
+  background-size: 600% 100%; /* (6 images * 100%) */
   background-image: url("../img/spritesheets/spritesheet_tentacules.png");
-  animation: 2s steps(48) infinite playSprite;
+  animation: 2s steps(6) infinite playSprite;
   margin: 0 auto;
 }
+
 @keyframes playSprite {
   from {
     background-position: 0 100%;
   }
   to {
-    background-position: -4800% 100%;
+    background-position: -600% 100%; /* (6 images * 100%) */
   }
 }
 .credits {
@@ -422,8 +403,8 @@ svg {
   border-radius: 5vh;
   padding: 2vh;
   font-size: 0.9rem;
-  text-align: center;
-  left: 50%;
+  left: 50vw;
+  bottom: 5vh;
   margin-top: 10vmin;
-  transform: translate(-50%, 100%);
+  z-index: 7;
 }

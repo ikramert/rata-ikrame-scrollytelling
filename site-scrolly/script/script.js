@@ -1,4 +1,11 @@
+//Gratuits
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(MotionPathPlugin);
+
+// Payants
+gsap.registerPlugin(DrawSVGPlugin);
+gsap.registerPlugin(MorphSVGPlugin);
+
 let e;
 window.addEventListener("scroll", function () {
   document.body.classList.add("is-scrolling"),

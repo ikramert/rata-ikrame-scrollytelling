@@ -1,6 +1,6 @@
 //Gratuits
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(MotionPathPlugin);
+//gsap.registerPlugin(MotionPathPlugin);
 
 /*// Payants
 gsap.registerPlugin(DrawSVGPlugin);

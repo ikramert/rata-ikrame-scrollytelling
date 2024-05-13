@@ -1,19 +1,4 @@
 @import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap);
-.titre,
-h1,
-header,
-img,
-section {
-  width: 100%;
-}
-.credits,
-.histoire,
-.titre,
-.titreHistoire,
-h1,
-h4 {
-  text-align: center;
-}
 body,
 main {
   width: 100vw;
@@ -21,55 +6,41 @@ main {
 header,
 section {
   background-position: center;
+  width: 100%;
 }
 .titre,
 .titreHistoire {
   color: var(--off-white);
 }
+.titre,
+h1,
+header,
+section {
+  width: 100%;
+}
 .titreHistoire,
 h1 {
   position: absolute;
+  text-align: center;
   font-size: 4vw;
-}
-img {
-  height: auto;
-  max-width: 100%;
 }
 #defilezbtn,
 .titreHistoire {
-  max-width: 50vw;
   left: 50%;
   transform: translateX(-50%);
-}
-.titre,
-ul.technique-gsap {
-  left: 0;
-  position: absolute;
 }
 #chapitre1,
 header,
 section {
   position: relative;
   background-size: cover;
+  height: 100vh;
 }
 #chapitre1,
 header,
 main,
 section {
   height: 100vh;
-}
-.sousmarinbleu {
-  background-image: url("../img/img_elements_visuels/sous_marin2.png");
-  background-repeat: no-repeat;
-  top: 40vh;
-  left: 10vh;
-}
-
-.sousmarinbleu2 {
-  background-size: 100% 1200%;
-  background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
-  animation: 6s steps(12) infinite sousmarinplay;
-  aspect-ratio: 1/1;
 }
 :root {
   --bleu-pale: #36a9e0;
@@ -99,8 +70,10 @@ ul.technique-gsap {
   padding: 10px 20px 12px;
   margin: 0;
   max-width: 300px;
+  position: absolute;
   z-index: 1000;
   top: 0;
+  left: 0;
 }
 ul.technique-gsap li {
   margin: 5px 0;
@@ -120,16 +93,13 @@ section {
 }
 .titre {
   font-size: 2.5rem;
+  text-align: center;
   margin-top: 5vh;
   margin-bottom: 20px;
+  position: absolute;
   top: 20;
+  left: 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-}
-#defilezbtn span,
-.histoire,
-h4 {
-  font-size: 2rem;
-  color: var(--off-white);
 }
 h1 {
   top: 5vh;
@@ -138,17 +108,15 @@ h1 {
 }
 .histoire,
 h4 {
+  font-size: 2rem;
   position: absolute;
+  color: var(--off-white);
+  text-align: center;
 }
 .histoire {
   left: 25vw;
   padding-bottom: 5vh;
   width: 100vw;
-}
-.description,
-svg {
-  width: 50vw;
-  position: absolute;
 }
 h4 {
   top: 35%;
@@ -174,16 +142,20 @@ h4 {
   }
 }
 .description {
+  position: absolute;
+  width: 50vw;
   top: 50vh;
 }
 #defilezbtn {
   position: absolute;
-  bottom: 2vh;
+  bottom: 20px;
   display: flex;
   align-items: center;
 }
 #defilezbtn span {
-  margin-left: 1vw;
+  margin-left: 5px;
+  font-size: 30px;
+  color: var(--off-white);
 }
 #chapitre1 {
   background-image: url("../img/img_arriere_plan/chapitre_1/arriere-plan-chp1.png");
@@ -193,7 +165,7 @@ h4 {
   position: absolute;
   left: 0;
   top: 30vh;
-  max-width: 50vmax;
+  width: 50vmax;
   height: auto;
   z-index: 3;
 }
@@ -238,11 +210,7 @@ h4 {
 }
 .jumellesimg,
 .medusebleuimg,
-.meduseroseimg,
-.monstreimg,
-.sousmarinbleu,
-.sousmarinbleu2,
-.tresorimg {
+.meduseroseimg {
   height: auto;
   position: absolute;
 }
@@ -276,21 +244,9 @@ h4 {
   top: 20vh;
 }
 .sousmarinbleu {
-  bottom: 20vh;
+  position: absolute;
+  top: 30vh;
   left: 0;
-  width: 50vmin;
-}
-body.is-scrolling .sprite1.sprite2,
-body.is-scrolling .sprite2 {
-  animation-play-state: running;
-}
-@keyframes sousmarinplay {
-  from {
-    background-position: -1200% 0;
-  }
-  to {
-    background-position: 0 -1200%;
-  }
 }
 #chapitre4 {
   background-image: url("../img/img_arriere_plan/chapitre_4/arriere-plan-chp4.png");
@@ -303,23 +259,42 @@ body.is-scrolling .sprite2 {
   top: 25vh;
 }
 .monstreimg {
+  position: absolute;
   bottom: 8vh;
   left: 35vw;
   width: 40vmin;
+  height: auto;
 }
-.sousmarinbleu2 {
-  top: 20vh;
-  right: 0;
-  width: 30vmin;
+.sousmarinbleurouge2 {
+  position: absolute;
+  bottom: 35vh;
+  left: 30vw;
+  width: 60vmin;
+  height: 50vmin;
+  aspect-ratio: 1/1;
+  background-size: 100% 4800%;
+  background-image: url("../img/spritesheets/spritesheet_sous_marin.png");
+  animation: 3s steps(48) infinite playSprite2;
+  margin: 0 auto;
   transform: scaleX(-1);
+}
+@keyframes playSprite2 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -4800%;
+  }
 }
 section#chapitre5 {
   background-image: url("../img/img_arriere_plan/chapitre_5/arriere-plan-chp5.png");
 }
 .tresorimg {
+  position: absolute;
   bottom: 8vh;
   left: 0;
   width: 27vmin;
+  height: auto;
   z-index: 4;
 }
 .plaineavant {
@@ -354,6 +329,8 @@ section#chapitre5 {
   left: 25vw;
 }
 svg {
+  position: absolute;
+  width: 50vw;
   height: 50vh;
   top: 0;
   left: 35vw;
@@ -361,10 +338,37 @@ svg {
 #cadenas {
   visibility: hidden;
 }
+.texte-voix1 {
+  color: var(--off-white);
+  font-size: 6vw;
+  top: 30vh;
+  left: 45vw;
+  opacity: 0;
+}
+.overlay-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0;
+  z-index: 10;
+}
+.animation-trace,
+.credits {
+  top: 50%;
+  position: absolute;
+}
 #chapitre6 {
   background-image: url("../img/img_arriere_plan/chapitre_6/arriere-plan-chp6.png");
 }
-
+#etoile-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
 .animation-container {
   position: relative;
   width: 100%;
@@ -374,25 +378,27 @@ svg {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-tentacules {
+.tentacules {
   position: absolute;
   bottom: 35vh;
   left: 30vw;
   width: 50vmin;
   height: 50vmin;
   aspect-ratio: 1/1;
-  background-size: 600% 100%; /* (6 images * 100%) */
+  background-size: 600% 100%;
   background-image: url("../img/spritesheets/spritesheet_tentacules.png");
   animation: 2s steps(6) infinite playSprite;
   margin: 0 auto;
 }
-
+body.is-scrolling .sprite2 {
+  animation-play-state: running;
+}
 @keyframes playSprite {
   from {
     background-position: 0 100%;
   }
   to {
-    background-position: -600% 100%; /* (6 images * 100%) */
+    background-position: -600% 100%;
   }
 }
 .credits {
@@ -403,8 +409,8 @@ tentacules {
   border-radius: 5vh;
   padding: 2vh;
   font-size: 0.9rem;
-  left: 50vw;
-  bottom: 5vh;
+  text-align: center;
+  left: 50%;
   margin-top: 10vmin;
-  z-index: 7;
+  transform: translate(-50%, 100%);
 }

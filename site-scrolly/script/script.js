@@ -1,23 +1,19 @@
 gsap.registerPlugin(ScrollTrigger);
-
 let e;
-
 window.addEventListener("scroll", function () {
-  document.body.classList.add("is-scrolling");
-  clearTimeout(e);
-  e = setTimeout(function () {
-    document.body.classList.remove("is-scrolling");
-  }, 100);
-});
-
-gsap.to("#defilezbtn img, span", {
-  y: 10,
-  duration: 0.5,
-  ease: "power1.inOut",
-  repeat: -1,
-  yoyo: !0,
-});
-
+  document.body.classList.add("is-scrolling"),
+    clearTimeout(e),
+    (e = setTimeout(function () {
+      document.body.classList.remove("is-scrolling");
+    }, 100));
+}),
+  gsap.to("#defilezbtn img, span", {
+    y: 10,
+    duration: 0.5,
+    ease: "power1.inOut",
+    repeat: -1,
+    yoyo: !0,
+  });
 const chapitre1 = gsap.timeline({
   scrollTrigger: {
     trigger: "#chapitre1",
@@ -122,7 +118,7 @@ chapitre4.fromTo(
     { x: "-100vw", duration: 9, ease: "power1.inOut", repeat: -1 }
   ),
   gsap.fromTo(
-    ".sousmarinbleu2",
+    ".sousmarinbleurouge2",
     { x: "100vw" },
     { x: "-100vw", duration: 10, ease: "power1.inOut", repeat: -1 }
   );
